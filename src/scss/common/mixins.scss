@@ -1,0 +1,19 @@
+@mixin container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+@mixin reset-button {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@mixin reset-list {
+  list-style: none;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 0;
+}

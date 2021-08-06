@@ -1,0 +1,38 @@
+// font-family: 'Mulish', sans-serif;
+// font-family: 'Roboto', sans-serif;
+
+html {
+	font-size: 15px;
+	height: 100%;
+}
+
+body {
+	display: grid;
+	grid-template-rows: min-content 1fr min-content;
+	align-content: start;
+	min-height: 100%;
+}
+
+img {
+  display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <a class="logo" href="/">
+        <img src="img/icons/logo.svg" alt="Logo Safari">
+      </a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__link">
+            <a class="nav__link" href="#">Home</a>
+          </li>
+          <li class="nav__link">
+            <a class="nav__link" href="#">Clothes</a>
+          </li>
+          <li class="nav__link">
+            <a class="nav__link" href="#">Shoes</a>
+          </li>
+          <li class="nav__link">
+            <a class="nav__link" href="#">Accessories</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__wrap">
+        <div class="search">
+          <form class="search__form" action="#">
+            <input class="search__input" type="search" placeholder="Search...">
+            <button class="serach__submit" type="submit"></button>
+          </form>
+        </div>
+
+        <div class="user__nav">
+          <a class="user__nav-link user__nav-link--cabinet" href="#" aria-label="Cabinet"></a>
+          <a class="user__nav-link user__nav-link--cart" href="#" aria-label="Cart"></a>
+          <a class="user__nav-link user__nav-link--favorites" href="#" aria-label="favorites"></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="intro">
+      <div class="intro__container">
+        <h1 class="visually-hidden">Safari - online store of clothes and accessories</h2>
+
+        <div class="slider"></div>
+
+        <a class="scroll-down" href="#">
+          <span class="scroll-down__text">Explore our collection</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="catalog">
+      <div class="catalog__container">
+        <h2 class="catalog__title">Shop your style</h2>
+        <p class="catlog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae gravida cursus adipiscing 
+        viverra at tortor, egestas odio parturient. Morbi ut lorem in erat. Et et molestie diam diam ultricies. 
+        Scelerisque duis diam ac cras dictum adipiscing. Venenatis at sit proin ut vitae adipiscing id facilisis.</p>
+
+        <ul class="catalog__list">
+          <li class="catalog__item">
+            <div class="card">
+              <div class="card__overlay">
+                <img class="card__img" src="#" alt="#">
+
+                <div class="card__buttons">
+                  <button class="card__like"></button>
+                  <button class="card__add" type="button"></button>
+                </div>
+              </div>
+
+              <div class="card__inner">
+                <h3 class="card__title">Multicolored armless top</h3>
+                <span class="card__price">₦ 10,000</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="pagination">
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--active" href="#">1</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--active" href="#">2</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--active" href="#">3</a>
+        </li>
+        <li class="pagination__item">
+          <a class="pagination__link pagination__link--active" href="#">></a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <a class="footer__logo" href="/">
+        <img src="img/icons/logo.svg" alt="Logo Safari">
+      </a>
+
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About Us</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms & Conditions</a>
+        </li>
+      </ul>
+
+      <div class="social">
+        <a class="social__link" href="#">
+          <svg class="social__icon"></svg>
+          <span class="social__text">Facebook</span>
+        </a>
+        <a class="social__link" href="#">
+          <svg class="social__icon"></svg>
+          <span class="social__text">Twitter</span>
+        </a>
+        <a class="social__link" href="#">
+          <svg class="social__icon"></svg>
+          <span class="social__text">Instagram</span>
+        </a>
+      </div>
+
+      <div class="subscribe">
+        <h2 class="footer__title">Subscribe to our newsletter</h2>
+
+        <form class="subscribe__form" action="#">
+          <input class="subscribe__input" type="email" placeholder="Email Address">
+          <input class="subscribe__submit" type="submit" value="Ok">
+        </form>
+      </div>
+
+      <div class="footer__info">
+        <p class="footer__text">497 Evergreen Rd. Roseville, CA 95673</p>
+        <a class="footer__link" href="tel:+44345678903"></a>
+        <a class="footer__link" href="#">adobexd@mail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <a class="scroll-top" href="#page"></a> -->
+  
+  <script src="js/main.min.js"></script>
+</body>
+</html>

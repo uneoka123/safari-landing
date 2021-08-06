@@ -1,0 +1,33 @@
+{
+  "name": "safari",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cheerio": "latest",
+    "gulp-concat": "latest",
+    "gulp-csso": "latest",
+    "gulp-htmlmin": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-plumber": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svgmin": "latest",
+    "gulp-svgstore": "latest",
+    "gulp-terser": "latest",
+    "gulp-webp": "latest"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp dev"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ]
+}
