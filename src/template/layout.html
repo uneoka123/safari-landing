@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__container">
+      <a class="logo" href="/">
+        <img src="img/icons/logo.svg" alt="Logo Safari">
+      </a>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link nav__link--active" href="#">Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Clothes</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Shoes</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Accessories</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__wrap">
+        <div class="search">
+          <form class="search__form" action="#">
+            <input class="search__input" type="search" placeholder="Search...">
+            <button class="search__submit" type="submit" aria-label="search">
+              <svg class="search__submit-icon" width="16" height="16">
+                <use href="img/sprite.svg#search"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <div class="user-nav">
+          <a class="user-nav__link user-nav__link--cabinet" href="#" aria-label="Cabinet">
+            <svg class="user-nav__icon" width="16" height="16">
+              <use href="img/sprite.svg#user"></use>
+            </svg>
+          </a>
+          <a class="user-nav__link user-nav__link--cart" href="#" aria-label="Cart">
+            <svg class="user-nav__icon" width="16" height="16">
+              <use href="img/sprite.svg#cart"></use>
+            </svg>
+          </a>
+          <a class="user-nav__link user-nav__link--favorites" href="#" aria-label="favorites">
+            <svg class="user-nav__icon" width="16" height="16">
+              <use href="img/sprite.svg#heart"></use>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <a class="footer__logo" href="/">
+        <img src="img/icons/logo.svg" alt="Logo Safari">
+      </a>
+
+      <ul class="footer__list">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About Us</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms & Conditions</a>
+        </li>
+      </ul>
+
+      <div class="social">
+        <a class="social__link social__link--fb" href="#">
+          <span class="social__text">Facebook</span>
+        </a>
+        <a class="social__link social__link--tw" href="#">
+          <span class="social__text">Twitter</span>
+        </a>
+        <a class="social__link social__link--insta" href="#">
+          <span class="social__text">Instagram</span>
+        </a>
+      </div>
+
+      <div class="subscribe">
+        <p class="footer__text">Subscribe to our newsletter</p>
+
+        <form class="subscribe__form" action="#">
+          <input class="subscribe__input" type="email" placeholder="Email Address">
+          <input class="subscribe__submit" type="submit" value="Ok">
+        </form>
+      </div>
+
+      <div class="footer__info">
+        <p class="footer__text">497 Evergreen Rd. Roseville, CA 95673</p>
+        <a class="footer__info-link" href="tel:+44345678903">+44 345 678 903</a>
+        <a class="footer__info-link" href="#">adobexd@mail.com</a>
+      </div>
+    </div>
+  </footer>
+
+   <script src="js/main.min.js"></script>
+</body>
+</html>

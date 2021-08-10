@@ -13,6 +13,7 @@
     "gulp-dart-sass": "latest",
     "gulp-htmlmin": "latest",
     "gulp-imagemin": "latest",
+    "gulp-nunjucks-render": "^2.2.3",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-sourcemaps": "latest",

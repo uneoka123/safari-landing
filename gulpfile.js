@@ -5,6 +5,7 @@ import concat from 'gulp-concat';
 import csso from 'gulp-csso';
 import htmlmin from 'gulp-htmlmin';
 import imagemin from 'gulp-imagemin';
+import nunjucksRender from 'gulp-nunjucks-render';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sourcemap from 'gulp-sourcemaps';
@@ -35,6 +36,11 @@ const path = {
     root: `${dirs.src}/*.html`,
     save: `${dirs.dest}`
   },
+  template: {
+    root: `${dirs.src}/template/`,
+    pages: `${dirs.src}/template/pages/`,
+    save: `${dirs.dest}`
+  },
   scripts: {
     root: `${dirs.src}/js/**/*.js`,
     save: `${dirs.dest}/js/`
@@ -44,6 +50,11 @@ const path = {
     save: `${dirs.dest}/img/`
   }
 };
+
+// Template
+export const template = () => src(`${path.template.pages}*.html`)
+  .pipe(nunjucksRender({ path: [`${path.template.root}`] }))
+  .pipe(dest(path.template.save));
 
 // HTML
 export const html = () => src(path.html.root)
@@ -134,13 +145,14 @@ export const devWatch = () => {
     notify: false,
     open: false,
   });
-  watch(`${path.html.root}`, html).on('change', browserSync.reload);
+  // watch(`${path.html.root}`, html).on('change', browserSync.reload);
+  watch(`${path.template.root}**/*.html`, template).on('change', browserSync.reload);
   watch(`${path.styles.root}`, styles).on('change', browserSync.reload);
   watch(`${path.scripts.root}`, scripts).on('change', browserSync.reload);
 };
 
 // Develop
-export const dev = series(clean, parallel(html, styles, scripts, sprite, copy), devWatch);
+export const dev = series(clean, parallel(template, styles, scripts, sprite, copy), devWatch);
 
 // Build
 export const build = series(clean, parallel(html, styles, scripts, sprite, fonts, img));
