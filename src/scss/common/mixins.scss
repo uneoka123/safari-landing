@@ -4,10 +4,11 @@
   margin-right: auto;
   padding-left: 50px;
   padding-right: 50px;
+  box-sizing: border-box;
 }
 @mixin reset-button {
   padding: 0;
-  background: none;
+  background-color: transparent;
   border: none;
   cursor: pointer;
 }

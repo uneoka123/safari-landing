@@ -1,0 +1,24 @@
+.scroll-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 50px;
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 120px;
+  right: -100%;
+  transition: .2s;
+
+  // &:hover,
+  // &:focus {
+  //   color: var(--red);
+  //   border-color: var(--red);
+  // }
+
+  &--active {
+    right: 50px;
+  }
+}

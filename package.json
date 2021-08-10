@@ -10,11 +10,11 @@
     "gulp-cheerio": "latest",
     "gulp-concat": "latest",
     "gulp-csso": "latest",
+    "gulp-dart-sass": "latest",
     "gulp-htmlmin": "latest",
     "gulp-imagemin": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
-    "gulp-sass": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-svgmin": "latest",
     "gulp-svgstore": "latest",
@@ -29,5 +29,8 @@
     "last 2 versions",
     "not dead",
     "not ie <= 11"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^6.8.1"
+  }
 }

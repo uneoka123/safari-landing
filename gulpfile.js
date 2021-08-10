@@ -9,7 +9,7 @@ import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sourcemap from 'gulp-sourcemaps';
 import svgmin from 'gulp-svgmin';
-import sass from 'gulp-sass';
+import sass from 'gulp-dart-sass';
 import svgstore from 'gulp-svgstore';
 import terser from 'gulp-terser';
 import webp from 'gulp-webp';
@@ -27,8 +27,8 @@ const dirs = {
 // Пути к файлам
 const path = {
   styles: {
-    root: `${dirs.src}/sass/`,
-    compile: `${dirs.src}/sass/style.scss`,
+    root: `${dirs.src}/scss/`,
+    compile: `${dirs.src}/scss/style.scss`,
     save: `${dirs.dest}/css/`
   },
   html: {
@@ -54,10 +54,10 @@ export const html = () => src(path.html.root)
   .pipe(dest(path.html.save));
 
 // Styles
-export const styles = () => src(path.styles.compile)
+export const styles = () => src(['node_modules/swiper/swiper-bundle.min.css', path.styles.compile ])
   .pipe(plumber())
   .pipe(sourcemap.init())
-  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer())
   .pipe(csso())
   .pipe(concat('style.css'))
@@ -66,29 +66,26 @@ export const styles = () => src(path.styles.compile)
   .pipe(dest(path.styles.save));
 
 // Scripts
-export const scripts = () => src(path.scripts.root)
+export const scripts = () => src(['node_modules/swiper/swiper-bundle.min.js', path.scripts.root])
   .pipe(concat('main.js'))
   .pipe(terser())
   .pipe(rename({ suffix: '.min' }))
   .pipe(dest(path.scripts.save));
 
 // Sprite
-export const sprite = () => src(`${path.img.root}/**/*.svg`)
+export const sprite = () => src(`${path.img.root}icons/*.svg`)
   .pipe(svgmin({
     plugins: [
-      { removeDoctype: true },
-      { removeXMLNS: true },
-      { removeXMLProcInst: true },
-      { removeComments: true },
-      { removeMetadata: true },
-      { removeEditorNSData: true },
-      { removeViewBox: false }
+      {
+        name: 'removeViewBox',
+        active: false
+      }
     ]
   }))
   .pipe(cheerio({
     run: function ($) {
       $('[fill]').attr('fill', 'currentColor');
-      $('[stroke]').removeAttr('stroke');
+      $('[stroke]').attr('stroke', 'currentColor').attr('fill', 'transparent');
       $('[style]').removeAttr('style');
     },
     parserOptions: { xmlMode: true }

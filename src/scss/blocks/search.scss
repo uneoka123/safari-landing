@@ -1,0 +1,28 @@
+.search__form {
+  display: flex;
+  align-items: flex-end;
+}
+
+.search__input {
+  width: 175px;
+  padding: 0 5px 3px 0;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0, .5);
+  outline: none;
+
+  &:focus {
+    border-bottom-color: var(--red);
+  }
+}
+
+.search__submit {
+  @include reset-button;
+  
+  color: var(--black);
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    color: var(--red);
+  }
+}

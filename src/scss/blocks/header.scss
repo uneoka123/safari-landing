@@ -1,3 +1,17 @@
 .header__container {
   @include container;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-sizing: content-box;
+}
+
+.header__wrap {
+  display: flex;
+  column-gap: 40px;
+  order: 3;
 }

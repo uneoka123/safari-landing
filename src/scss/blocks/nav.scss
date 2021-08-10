@@ -1,0 +1,40 @@
+.nav {
+  order: 1;
+}
+
+.nav__list {
+  @include reset-list;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav__item {
+  margin-right: 50px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.nav__link {
+  font-family: var(--main-font);
+  font-weight: 600;
+  letter-spacing: .2px;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid transparent;
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    color: var(--red);
+    border-bottom-color: var(--red);
+  }
+
+  &--active {
+    color: var(--red);
+    font-weight: 800;
+    border-bottom-color: var(--red);
+  }
+}

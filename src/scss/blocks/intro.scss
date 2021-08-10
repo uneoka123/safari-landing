@@ -1,0 +1,58 @@
+.intro {
+  color: var(--white);
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(--red);
+  background-image: url("../img/icons/logo-large.svg");
+  background-repeat: no-repeat;
+  background-position: center 150px;
+  position: relative;
+}
+
+.intro__container {
+  @include container;
+}
+
+.intro__slide {
+  cursor: grab;
+}
+
+.intro__img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro__pagination {
+  margin-top: 30px;
+  position: static;
+
+  > span {
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: var(--white);
+  }
+}
+
+.intro__scroll {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.intro__scroll-text {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.intro__scroll-icon {
+  margin-top: 15px;
+}
