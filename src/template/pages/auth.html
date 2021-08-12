@@ -1,0 +1,72 @@
+{% set page = 'auth' %}
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="auth">
+  <div class="auth__container">
+    <p class="auth__text auth__text--large">Hello there!</p>
+    <p class="auth__text">Please sign in or create account to continue</p>
+
+    <div class="auth__inner">
+      <form class="form" action="#" method="POST">
+        <h2 class="auth__title">sign in</h2>
+
+        <div class="form__group">
+          <input id="email-sign" class="form__input" type="email">
+          <label class="form__label" for="email-sign">Email</label>
+        </div>
+
+        <div class="form__group">
+          <input id="password-sign" class="form__input" type="password">
+          <label class="form__label" for="password-sign">Password</label>
+        </div>
+
+        <div class="checkbox">
+          <input id="checkbox-sign" class="checkbox__input" type="checkbox" checked>
+          <label class="checkbox__label" for="checkbox-sign">Remeber my details</label>
+        </div>
+
+        <input class="form__submit" type="submit" value="sign in">
+        <a class="auth__link" href="#">Forgot password?</a>
+      </form>
+
+      <form class="form" action="#" method="POST">
+        <h2 class="auth__title">create account</h2>
+
+        <div class="form__group">
+          <input id="name" class="form__input" type="text">
+          <label class="form__label" for="name">First name</label>
+        </div>
+
+        <div class="form__group">
+          <input id="surname" class="form__input" type="text">
+          <label class="form__label" for="surname">Last name</label>
+        </div>
+
+        <div class="form__group">
+          <input id="email" class="form__input" type="email">
+          <label class="form__label" for="email">Email</label>
+        </div>
+
+        <div class="form__group">
+          <input id="password-create" class="form__input" type="password">
+          <label class="form__label" for="password-create">Create Password</label>
+        </div>
+
+        <div class="form__group">
+          <input id="password-confirm" class="form__input" type="password">
+          <label class="form__label" for="password-confirm">Confirm Password</label>
+        </div>
+
+        <div class="checkbox">
+          <input id="checkbox" class="checkbox__input" type="checkbox" checked>
+          <label class="checkbox__label" for="checkbox">I want to receive Safari newsletters with the best deals
+            and offers</label>
+        </div>
+
+        <input class="form__submit" type="submit" value="create account">
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

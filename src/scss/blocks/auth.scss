@@ -1,0 +1,43 @@
+.auth {
+  padding: 65px 0 220px;
+}
+
+.auth__container {
+  @include container;
+
+  max-width: 1080px;
+}
+
+.auth__text {
+  font-size: 20px;
+  letter-spacing: .2px;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--large {
+    font-size: 30px;
+    font-weight: 800;
+  }
+}
+
+.auth__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 160px;
+  margin-top: 60px;
+}
+
+.auth__title {
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  margin-bottom: 30px;
+}
+
+.auth__link {
+  text-decoration: underline;
+}

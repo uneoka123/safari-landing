@@ -1,0 +1,284 @@
+{% set page = 'clothes' %}
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="product-page">
+  <div class="product-page__container">
+    <h2 class="product-page__title">clothes</h2>
+
+    <div class="product-page__inner">
+      <section class="filters">
+        <form class="filters__form" action="#">
+          <div class="filters__set">
+            <h2 class="filters__title">category</h2>
+
+            <ul class="filters__list">
+              <li class="filters__item">
+                <a class="filters__link filters__link--active" href="#">All</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Dresses</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Denim</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Jeans</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Jumpsuits</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Tops</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Jackets and coats</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Pants</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Shorts</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Skirts</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Loungerie & underwear</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Leather</a>
+              </li>
+              <li class="filters__item">
+                <a class="filters__link" href="#">Sweaters & knits</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="filters__set">
+            <h2 class="filters__title">size</h2>
+
+            <ul class="filters__size-list">
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">XXS</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">XS</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">S</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">M</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">L</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link filters__size-link--active" href="#">XL</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">23</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">24</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">25</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">26</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">27</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">28</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">29</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">30</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link filters__size-link--active" href="#">31</a>
+              </li>
+              <li class="filters__size-item">
+                <a class="filters__size-link" href="#">32</a>
+              </li>
+            </ul>
+
+            <button class="filters__clear" type="button">Clear</button>
+          </div>
+
+          <div class="filters__set">
+            <h2 class="filters__title">colors</h2>
+
+            <ul class="filters__colors-list">
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--beige" href="#">Beige</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--blue" href="#">Blue</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--black" href="#">Black</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--orange" href="#">Orange</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--green" href="#">Green</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--brown" href="#">Brown</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--purple" href="#">Purple</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--gold" href="#">Gold</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--taupe" href="#">Taupe</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--white" href="#">White</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--pink" href="#">Pink</a>
+              </li>
+              <li class="filters__colors-item">
+                <a class="filters__colors-link filters__colors-link--red" href="#">Red</a>
+              </li>
+            </ul>
+
+            <button class="filters__clear" type="button">Clear</button>
+          </div>
+
+          <div class="filters__set">
+            <h2 class="filters__title">price</h2>
+
+            <div class="filters__checkbox">
+              <div class="filters__checkbox-item">
+                <input id="0-10k" class="filters__checkbox-input" type="checkbox">
+                <label class="filters__checkbox-label" for="0-10k">₦0 &emsp;-&emsp; ₦10,000</label>
+              </div>
+              <div class="filters__checkbox-item">
+                <input id="10k-20k" class="filters__checkbox-input" type="checkbox">
+                <label class="filters__checkbox-label" for="10k-20k">₦10,000 &emsp;-&emsp; ₦20,000</label>
+              </div>
+              <div class="filters__checkbox-item">
+                <input id="20k-50k" class="filters__checkbox-input" type="checkbox">
+                <label class="filters__checkbox-label" for="20k-50k">₦20,000 &emsp;-&emsp; ₦50,000</label>
+              </div>
+              <div class="filters__checkbox-item">
+                <input id="50k-100k" class="filters__checkbox-input" type="checkbox">
+                <label class="filters__checkbox-label" for="50k-100k">₦50,000 &emsp;-&emsp; ₦100,000</label>
+              </div>
+              <div class="filters__checkbox-item">
+                <input id="100k-200k" class="filters__checkbox-input" type="checkbox">
+                <label class="filters__checkbox-label" for="100k-200k">₦100,000 &emsp;-&emsp; ₦200,000</label>
+              </div>
+            </div>
+
+            <div class="filters__price-control">
+              <div class="filter__price-item">
+                <input id="min-price" class="filters__price-input" type="number">
+                <label class="filters__price-label" for="min-price" aria-label="Min price">₦</label>
+              </div>
+              <span class="filters__price-text">to</span>
+              <div class="filter__price-item">
+                <input id="max-price" class="filters__price-input" type="number">
+                <label class="filters__price-label" for="max-price" aria-label="Max price">₦</label>
+              </div>
+
+              <input class="button filters__price-submit" type="submit" value="Apply">
+            </div>
+
+            <button class="filters__clear" type="button">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="product-page__products">
+        <header class="product-page__header">
+          <select class="select">
+            <option value="popular">Sort by: Most popular</option>
+            <option value="expensive">Sort by: Most expensive</option>
+            <option value="cheap">Sort by: Most cheap</option>
+          </select>
+        </header>
+
+        {% set card_list = [{
+          'img': '17',
+          'title': 'Red lightweight gown'
+        }, {
+          'img': '1',
+          'title': 'Multicolored armless top'
+        }, {
+          'img': '12',
+          'title': 'Ladies bush pants'
+        }, {
+          'img': '3',
+          'title': 'Mini skirt'
+        }, {
+          'img': '5',
+          'title': 'Blue botton-down gown'
+        }, {
+          'img': '15',
+          'title': 'Checked ladies trouser'
+        }, {
+          'img': '18',
+          'title': 'Top with Pleated Skirt Satin'
+        }, {
+          'img': '19',
+          'title': 'Winter Warm Woolen Parka'
+        }, {
+          'img': '20',
+          'title': 'Summer Dress for Women'
+        }, {
+          'img': '23',
+          'title': 'Women office suit'
+        }, {
+          'img': '22',
+          'title': 'Single Breasted Cami Top'
+        }, {
+          'img': '21',
+          'title': 'Twill paper bag trousers'
+        }] %}
+
+        <ul class="product-page__list">
+          {% for card in card_list %}
+          <li class="product-page__item">
+            <div class="card">
+              <div class="card__overlay">
+                <img class="card__img" src="img/catalog/{{ card.img }}.jpg" alt="#">
+              </div>
+
+              <div class="card__inner">
+                <h3 class="card__title">{{ card.title }}</h3>
+                <span class="card__price">₦ 10,000</span>
+              </div>
+
+              <div class="card__buttons">
+                <button class="card__like" aria-label="add to favorites">
+                  <img src="img/icons/heart.png" alt="icon heart">
+                </button>
+                <button class="card__add" type="button">
+                  <span class="card__add-text">add to cart</span>
+                  <img src="img/icons/cart.png" alt="icon cart">
+                </button>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% include "blocks/pagination.html" %}
+  </div>
+</section>
+{% endblock %}

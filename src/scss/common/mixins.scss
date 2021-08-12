@@ -6,6 +6,23 @@
   padding-right: 50px;
   box-sizing: border-box;
 }
+@mixin cross {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 10px;
+    height: 2px;
+    background-color: currentColor;
+    position: absolute;
+    top: 50%;
+    right: 0;
+  }
+
+  &::before { transform: translateY(-50%) rotate(45deg); }
+  &::after { transform: translateY(-50%) rotate(-45deg); }
+}
 @mixin reset-button {
   padding: 0;
   background-color: transparent;

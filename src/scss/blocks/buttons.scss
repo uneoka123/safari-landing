@@ -1,0 +1,15 @@
+.button {
+  @include reset-button;
+
+  color: var(--white);
+  font-weight: 600;
+  padding: 5px 15px;
+  background-color: var(--red);
+  border-radius: 2px;
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    background-color: var(--orange);
+  }
+}

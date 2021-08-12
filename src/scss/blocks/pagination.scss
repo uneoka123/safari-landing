@@ -3,10 +3,12 @@
 
   display: flex;
   justify-content: center;
+  margin-top: 100px;
 }
 
 .pagination__link {
   display: block;
+  line-height: 1;
   padding: 20px 30px;
   border-bottom: 1px solid rgba(0,0,0, .5);
   position: relative;

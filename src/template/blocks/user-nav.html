@@ -1,0 +1,23 @@
+{% set user_nav = [{
+  'href': 'auth',
+  'title': 'Cabinet',
+  'icon': 'user'
+}, {
+  'href': 'cart',
+  'title': 'Cart',
+  'icon': 'cart'
+}, {
+  'href': '#',
+  'title': 'Favorites',
+  'icon': 'heart'
+}] %}
+
+<div class="user-nav">
+  {% for link in user_nav %}
+    <a class="user-nav__link {{ modifier }}" href="{{ link.href }}.html" aria-label="{{ link.title }}">
+      <svg class="user-nav__icon" width="16" height="16">
+        <use href="img/sprite.svg#{{ link.icon }}"></use>
+      </svg>
+    </a>
+  {% endfor %}
+</div>

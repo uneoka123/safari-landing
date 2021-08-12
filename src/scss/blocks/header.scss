@@ -1,3 +1,7 @@
+.header {
+  background-color: var(--grey);
+}
+
 .header__container {
   @include container;
 

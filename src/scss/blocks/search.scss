@@ -6,6 +6,7 @@
 .search__input {
   width: 175px;
   padding: 0 5px 3px 0;
+  background: none;
   border: none;
   border-bottom: 1px solid rgba(0,0,0, .5);
   outline: none;
@@ -17,7 +18,7 @@
 
 .search__submit {
   @include reset-button;
-  
+
   color: var(--black);
   transition: .2s;
 

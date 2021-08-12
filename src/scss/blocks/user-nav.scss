@@ -18,6 +18,10 @@
   &:focus {
     color: var(--red);
   }
+
+  &--active {
+    color: var(--red);
+  }
 }
 
 .user-nav__icon {
