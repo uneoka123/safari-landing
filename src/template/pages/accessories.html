@@ -1,10 +1,10 @@
-{% set page = 'clothes' %}
+{% set page = 'accessories' %}
 {% extends 'layout.html' %}
 
 {% block content %}
 <section class="product-page">
   <div class="product-page__container">
-    <h2 class="product-page__title">clothes</h2>
+    <h2 class="product-page__title">accessories</h2>
 
     <div class="product-page__inner">
       <section class="filters">
@@ -56,7 +56,7 @@
           </div>
 
           <div class="filters__set">
-            <h2 class="filters__title">size</h2>
+            <h2 class="filters__title">size - <span class="filters__title-hint">EU/US</span></h2>
 
             {% include "blocks/size-list.html" %}
 
@@ -163,41 +163,41 @@
         </header>
 
         {% set card_list = [{
-          'img': '17',
-          'title': 'Red lightweight gown'
+          'img': 'accessories/1',
+          'title': 'Tambourine Crossbody Bag'
         }, {
-          'img': '1',
-          'title': 'Multicolored armless top'
+          'img': 'accessories/2',
+          'title': 'Summer Handbag'
         }, {
-          'img': '12',
-          'title': 'Ladies bush pants'
+          'img': 'accessories/3',
+          'title': 'Nereide Oval'
         }, {
-          'img': '3',
-          'title': 'Mini skirt'
+          'img': 'accessories/4',
+          'title': 'Diamond ladies ring'
         }, {
-          'img': '5',
-          'title': 'Blue botton-down gown'
+          'img': 'accessories/5',
+          'title': 'Casual baseball cap'
         }, {
-          'img': '15',
-          'title': 'Checked ladies trouser'
+          'img': 'accessories/6',
+          'title': 'Tear-drop stone necklace'
         }, {
-          'img': '18',
-          'title': 'Top with Pleated Skirt Satin'
+          'img': 'accessories/7',
+          'title': 'Ladies luxury watch'
         }, {
-          'img': '19',
-          'title': 'Winter Warm Woolen Parka'
+          'img': 'accessories/8',
+          'title': 'Pattern Cloth Face Mask'
         }, {
-          'img': '20',
-          'title': 'Summer Dress for Women'
+          'img': 'accessories/9',
+          'title': 'Fashion ladies watch'
         }, {
-          'img': '23',
-          'title': 'Women office suit'
+          'img': 'accessories/10',
+          'title': 'Beanie winter fleece'
         }, {
-          'img': '22',
-          'title': 'Single Breasted Cami Top'
+          'img': 'accessories/11',
+          'title': 'Black ladies backpack'
         }, {
-          'img': '21',
-          'title': 'Twill paper bag trousers'
+          'img': 'accessories/12',
+          'title': 'Black ladies backpack'
         }] %}
 
         <ul class="product-page__list">
@@ -205,7 +205,7 @@
           <li class="product-page__item">
             <div class="card">
               <div class="card__overlay">
-                <img class="card__img" src="img/catalog/{{ card.img }}.jpg" alt="#">
+                <img class="card__img" src="img/{{ card.img }}.jpg" alt="#">
               </div>
 
               <div class="card__inner">

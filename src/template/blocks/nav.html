@@ -1,0 +1,71 @@
+{% if page == 'index' %}
+  {% set nav_list = [{
+    'title': 'Home',
+    'href': '/',
+    'modifier': 'nav__link--active'
+  }, {
+    'title': 'Clothes',
+    'href': 'clothes.html'
+  }, {
+    'title': 'Shoes',
+    'href': 'shoes.html'
+  }, {
+    'title': 'Accessories',
+    'href': 'accessories.html'
+  }] %}
+{% elif page == 'clothes' %}
+{% set nav_list = [{
+    'title': 'Home',
+    'href': '/'
+  }, {
+    'title': 'Clothes',
+    'href': 'clothes.html',
+    'modifier': 'nav__link--active'
+  }, {
+    'title': 'Shoes',
+    'href': 'shoes.html'
+  }, {
+    'title': 'Accessories',
+    'href': 'accessories.html'
+  }] %}
+{% elif page == 'shoes' %}
+{% set nav_list = [{
+    'title': 'Home',
+    'href': '/'
+  }, {
+    'title': 'Clothes',
+    'href': 'clothes.html'
+  }, {
+    'title': 'Shoes',
+    'href': 'shoes.html',
+    'modifier': 'nav__link--active'
+  }, {
+    'title': 'Accessories',
+    'href': 'accessories.html'
+  }] %}
+{% elif page == 'accessories' %}
+{% set nav_list = [{
+    'title': 'Home',
+    'href': '/'
+  }, {
+    'title': 'Clothes',
+    'href': 'clothes.html'
+  }, {
+    'title': 'Shoes',
+    'href': 'shoes.html'
+  }, {
+    'title': 'Accessories',
+    'href': 'accessories.html',
+    'modifier': 'nav__link--active'
+  }] %}
+{% endif %}
+
+<nav class="nav">
+  <ul class="nav__list">
+    {% for item in nav_list %}
+    <li class="nav__item">
+      <a class="nav__link {{ item.modifier }}" href="{{ item.href }}">{{ item.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

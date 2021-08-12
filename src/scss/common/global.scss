@@ -49,6 +49,10 @@ p {
   margin-top: 0;
 }
 
+input:disabled + label {
+  opacity: .4;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
