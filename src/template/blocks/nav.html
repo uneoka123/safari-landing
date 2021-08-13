@@ -14,7 +14,7 @@
     'href': 'accessories.html'
   }] %}
 {% elif page == 'clothes' %}
-{% set nav_list = [{
+  {% set nav_list = [{
     'title': 'Home',
     'href': '/'
   }, {
@@ -29,7 +29,7 @@
     'href': 'accessories.html'
   }] %}
 {% elif page == 'shoes' %}
-{% set nav_list = [{
+  {% set nav_list = [{
     'title': 'Home',
     'href': '/'
   }, {
@@ -44,7 +44,7 @@
     'href': 'accessories.html'
   }] %}
 {% elif page == 'accessories' %}
-{% set nav_list = [{
+  {% set nav_list = [{
     'title': 'Home',
     'href': '/'
   }, {
@@ -57,6 +57,20 @@
     'title': 'Accessories',
     'href': 'accessories.html',
     'modifier': 'nav__link--active'
+  }] %}
+{% else %}
+  {% set nav_list = [{
+    'title': 'Home',
+    'href': '/'
+  }, {
+    'title': 'Clothes',
+    'href': 'clothes.html'
+  }, {
+    'title': 'Shoes',
+    'href': 'shoes.html'
+  }, {
+    'title': 'Accessories',
+    'href': 'accessories.html'
   }] %}
 {% endif %}
 

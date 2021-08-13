@@ -1,6 +1,7 @@
 .filters__form {
   display: grid;
   row-gap: 60px;
+  margin-top: 15px;
 }
 
 .filters__set {
@@ -14,11 +15,11 @@
   margin-bottom: 30px;
   padding-right: 60px;
   padding-bottom: 15px;
-  border-bottom: 1px solid rgba(0,0,0, .5);
+  border-bottom: 1px solid var(--black-5);
 }
 
 .filters__title-hint {
-  color: rgba(0,0,0, .5);
+  color: var(--black-5);
   font-weight: 400;
 }
 
@@ -51,17 +52,24 @@
   @include reset-list;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(54px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(54px, max-content));
   gap: 16px;
+
+  &--shoes {
+    grid-template-columns: repeat(auto-fit, minmax(75px, max-content));
+    gap: 16px 32px;
+  }
 }
 
 .filters__size-link {
   display: block;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
   padding: 7px 10px;
-  border: 1px solid rgba(0,0,0, .5);
+  border: 1px solid var(--black-5);
   border-radius: 2px;
+  box-sizing: border-box;
   transition: .2s;
 
   &--active {
@@ -90,6 +98,7 @@
     height: 32px;
     margin-right: 7px;
     border-radius: 2px;
+    box-sizing: border-box;
   }
 
   &--beige::before { background-color: #F3ECDB; }

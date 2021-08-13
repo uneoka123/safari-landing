@@ -155,48 +155,44 @@
 
       <div class="product-page__products">
         <header class="product-page__header">
-          <select class="select">
-            <option value="popular">Sort by: Most popular</option>
-            <option value="expensive">Sort by: Most expensive</option>
-            <option value="cheap">Sort by: Most cheap</option>
-          </select>
+          {% include "blocks/select.html" %}
         </header>
 
         {% set card_list = [{
-          'img': '17',
+          'img': '1',
           'title': 'Red lightweight gown'
         }, {
-          'img': '1',
+          'img': '2',
           'title': 'Multicolored armless top'
         }, {
-          'img': '12',
+          'img': '3',
           'title': 'Ladies bush pants'
         }, {
-          'img': '3',
+          'img': '4',
           'title': 'Mini skirt'
         }, {
           'img': '5',
           'title': 'Blue botton-down gown'
         }, {
-          'img': '15',
+          'img': '6',
           'title': 'Checked ladies trouser'
         }, {
-          'img': '18',
+          'img': '7',
           'title': 'Top with Pleated Skirt Satin'
         }, {
-          'img': '19',
+          'img': '8',
           'title': 'Winter Warm Woolen Parka'
         }, {
-          'img': '20',
+          'img': '9',
           'title': 'Summer Dress for Women'
         }, {
-          'img': '23',
+          'img': '10',
           'title': 'Women office suit'
         }, {
-          'img': '22',
+          'img': '11',
           'title': 'Single Breasted Cami Top'
         }, {
-          'img': '21',
+          'img': '12',
           'title': 'Twill paper bag trousers'
         }] %}
 
@@ -205,7 +201,7 @@
           <li class="product-page__item">
             <div class="card">
               <div class="card__overlay">
-                <img class="card__img" src="img/catalog/{{ card.img }}.jpg" alt="#">
+                <img class="card__img" src="img/clothes/{{ card.img }}.jpg" alt="#">
               </div>
 
               <div class="card__inner">

@@ -37,6 +37,8 @@
 {% endif %}
 
 {% if page == 'shoes' %}
+  {% set modifier = 'filters__size-list--shoes' %}
+
   {% set size_list = [{
     'title': '35.5/5'
   }, {
@@ -89,7 +91,7 @@
   }] %}
 {% endif %}
 
-<ul class="filters__size-list">
+<ul class="filters__size-list {{ modifier }}">
   {% for item in size_list %}
   <li class="filters__size-item">
     <a class="filters__size-link {{ item.modifier }}" href="#">{{ item.title }}</a>

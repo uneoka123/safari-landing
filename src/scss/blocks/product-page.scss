@@ -22,8 +22,9 @@
 }
 
 .product-page__header {
-  text-align: right;
-  border-bottom: 1px solid rgba(0,0,0, .5);
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid var(--black-5);
   padding-bottom: 15px;
 }
 

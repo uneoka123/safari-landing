@@ -155,48 +155,44 @@
 
       <div class="product-page__products">
         <header class="product-page__header">
-          <select class="select">
-            <option value="popular">Sort by: Most popular</option>
-            <option value="expensive">Sort by: Most expensive</option>
-            <option value="cheap">Sort by: Most cheap</option>
-          </select>
+          {% include "blocks/select.html" %}
         </header>
 
         {% set card_list = [{
-          'img': 'accessories/1',
+          'img': '1',
           'title': 'Tambourine Crossbody Bag'
         }, {
-          'img': 'accessories/2',
+          'img': '2',
           'title': 'Summer Handbag'
         }, {
-          'img': 'accessories/3',
+          'img': '3',
           'title': 'Nereide Oval'
         }, {
-          'img': 'accessories/4',
+          'img': '4',
           'title': 'Diamond ladies ring'
         }, {
-          'img': 'accessories/5',
+          'img': '5',
           'title': 'Casual baseball cap'
         }, {
-          'img': 'accessories/6',
+          'img': '6',
           'title': 'Tear-drop stone necklace'
         }, {
-          'img': 'accessories/7',
+          'img': '7',
           'title': 'Ladies luxury watch'
         }, {
-          'img': 'accessories/8',
+          'img': '8',
           'title': 'Pattern Cloth Face Mask'
         }, {
-          'img': 'accessories/9',
+          'img': '9',
           'title': 'Fashion ladies watch'
         }, {
-          'img': 'accessories/10',
+          'img': '10',
           'title': 'Beanie winter fleece'
         }, {
-          'img': 'accessories/11',
+          'img': '11',
           'title': 'Black ladies backpack'
         }, {
-          'img': 'accessories/12',
+          'img': '12',
           'title': 'Black ladies backpack'
         }] %}
 
@@ -205,7 +201,7 @@
           <li class="product-page__item">
             <div class="card">
               <div class="card__overlay">
-                <img class="card__img" src="img/{{ card.img }}.jpg" alt="#">
+                <img class="card__img" src="img/accessories/{{ card.img }}.jpg" alt="#">
               </div>
 
               <div class="card__inner">
