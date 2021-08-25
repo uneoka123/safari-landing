@@ -1,0 +1,102 @@
+.cart-product {
+  display: grid;
+  grid-template-columns: 600px 150px 1fr 1fr;
+  box-shadow: var(--shadow-2);
+}
+
+.cart-product__col {
+  padding: 55px 30px 20px;
+  text-align: center;
+  border-right: 1px solid var(--grey-3);
+  box-sizing: border-box;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &--description {
+    text-align: left;
+    padding: 35px 30px 20px;
+  }
+}
+
+.cart-product__desc {
+  display: flex;
+  align-items: center;
+}
+
+.cart-product__img {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+}
+
+.cart-product__wrap {
+  margin-left: 30px;
+}
+
+.cart-product__title {
+  font-size: 20px;
+  line-height: .9;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    color: var(--red);
+  }
+}
+
+.cart-product__info {
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 600;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cart-product__buttons {
+  margin-top: 10px;
+  margin-left: 116px;
+}
+
+.cart-product__button {
+  @include reset-button;
+
+  color: var(--red);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 60px;
+  padding-left: 24px;
+  transition: .2s;
+  position: relative;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  &--favorites::before { mask-image: url("../img/icons/heart-stroke.svg"); }
+  &--remove::before { mask-image: url("../img/icons/cross.svg"); }
+}
+
+.cart-product__price {
+  font-family: var(--sub-font);
+  font-size: 20px;
+}

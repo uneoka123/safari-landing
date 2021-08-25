@@ -1,0 +1,101 @@
+{% set page = 'cart' %}
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="cart">
+  <div class="cart__container">
+    <h2 class="cart__title">Shopping Cart (2 item)</h2>
+
+    <div class="cart__item-titles">
+      <span class="cart__col-title">item description</span>
+      <span class="cart__col-title">quantity</span>
+      <span class="cart__col-title">unit price</span>
+      <span class="cart__col-title">sub total</span>
+    </div>
+
+    <ul class="cart__list">
+      <li class="cart__item">
+        <div class="cart-product">
+          <div class="cart-product__col cart-product__col--description">
+            <div class="cart-product__desc">
+              <a href="#">
+                <img class="cart-product__img" src="img/shoes/5.jpg" alt="#">
+              </a>
+
+              <div class="cart-product__wrap">
+                <h3 class="cart-product__title">
+                  <a href="#">Casual flat loafers</a>
+                </h3>
+                <p class="cart-product__info">Size - EU: 36 US: 5.5</p>
+              </div>
+            </div>
+
+            <div class="cart-product__buttons">
+              <button class="cart-product__button cart-product__button--favorites">move to favorites</button>
+              <button class="cart-product__button cart-product__button--remove">remove</button>
+            </div>
+          </div>
+
+          <div class="cart-product__col">
+            {% include 'blocks/counter.html' %}
+          </div>
+
+          <div class="cart-product__col">
+            <span class="cart-product__price cart-product__unit-price">₦10,000</span>
+          </div>
+
+          <div class="cart-product__col">
+            <span class="cart-product__price cart-product__total-price">₦10,000</span>
+          </div>
+        </div>
+      </li>
+
+      <li class="cart__item">
+        <div class="cart-product">
+          <div class="cart-product__col cart-product__col--description">
+            <div class="cart-product__desc">
+              <a href="#">
+                <img class="cart-product__img" src="img/clothes/2.jpg" alt="#">
+              </a>
+
+              <div class="cart-product__wrap">
+                <h3 class="cart-product__title">
+                  <a href="#">Multicolored armless top</a>
+                </h3>
+                <p class="cart-product__info">Size - XS</p>
+              </div>
+            </div>
+
+            <div class="cart-product__buttons">
+              <button class="cart-product__button cart-product__button--favorites">move to favorites</button>
+              <button class="cart-product__button cart-product__button--remove">remove</button>
+            </div>
+          </div>
+
+          <div class="cart-product__col">
+            {% include 'blocks/counter.html' %}
+          </div>
+
+          <div class="cart-product__col">
+            <span class="cart-product__price cart-product__unit-price">₦10,000</span>
+          </div>
+
+          <div class="cart-product__col">
+            <span class="cart-product__price cart-product__total-price">₦10,000</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cart__info">
+      <p class="cart__info-price">total: <span class="cart__total-price">₦ 20,000</span></p>
+      <p class="cart__info-text">Delivery fee not included yet</p>
+    </div>
+
+    <div class="cart__buttons">
+      <button class="cart__button cart__button--continue">continue shopping</button>
+      <button class="cart__button cart__button--checkout">proced to checkout</button>
+    </div>
+  </div>
+</section>
+{% endblock %}
