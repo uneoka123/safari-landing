@@ -1,0 +1,58 @@
+{% if page == 'cabinet-account' %}
+  {% set account = 'cabinet__nav-item--active' %}
+{% elif page == 'cabinet-address' %}
+  {% set address = 'cabinet__nav-item--active' %}
+{% elif page == 'cabinet-orders' %}
+  {% set orders = 'cabinet__nav-item--active' %}
+{% elif page == 'cabinet-favorites' %}
+  {% set favorites = 'cabinet__nav-item--active' %}
+{% endif %}
+
+<div class="cabinet__nav">
+  <h2 class="cabinet__nav-title">account dashboard</h2>
+
+  <ul class="cabinet__nav-list">
+    <li class="cabinet__nav-item {{ account }}">
+      <a class="cabinet__nav-link" href="cabinet-account.html">
+        <svg class="cabinet__nav-icon" width="14" height="17">
+          <use href="img/sprite.svg#account"></use>
+        </svg>
+        Account Information
+      </a>
+    </li>
+
+    <li class="cabinet__nav-item {{ address }}">
+      <a class="cabinet__nav-link" href="cabinet-address.html">
+        <svg class="cabinet__nav-icon" width="14" height="17">
+          <use href="img/sprite.svg#book"></use>
+        </svg>
+        Address Book
+      </a>
+    </li>
+
+    <li class="cabinet__nav-item {{ orders }}">
+      <a class="cabinet__nav-link" href="cabinet-orders.html">
+        <svg class="cabinet__nav-icon" width="14" height="14">
+          <use href="img/sprite.svg#box"></use>
+        </svg>
+        My Orders
+      </a>
+    </li>
+
+    <li class="cabinet__nav-item {{ favorites }}">
+      <a class="cabinet__nav-link" href="cabinet-favorites.html">
+        <svg class="cabinet__nav-icon" width="14" height="14">
+          <use href="img/sprite.svg#heart"></use>
+        </svg>
+        My Favorites
+      </a>
+    </li>
+  </ul>
+
+  <a class="cabinet__logout" href="#">
+    <svg class="cabinet__logout-icon" width="16" height="16">
+      <use href="img/sprite.svg#logout"></use>
+    </svg>
+    <span class="cabinet__logout-text">sign out</span>
+  </a>
+</div>

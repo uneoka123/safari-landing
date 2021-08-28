@@ -1,23 +1,21 @@
-{% set user_nav = [{
-  'href': 'auth',
-  'title': 'Cabinet',
-  'icon': 'user',
-}, {
-  'href': 'cart',
-  'title': 'Cart',
-  'icon': 'cart'
-}, {
-  'href': '#',
-  'title': 'Favorites',
-  'icon': 'heart'
-}] %}
+{% set modifier = 'user-nav__link--active' %}
 
 <div class="user-nav">
-  {% for link in user_nav %}
-    <a class="user-nav__link {{ modifier }}" href="{{ link.href }}.html" aria-label="{{ link.title }}">
-      <svg class="user-nav__icon" width="16" height="16">
-        <use href="img/sprite.svg#{{ link.icon }}"></use>
-      </svg>
-    </a>
-  {% endfor %}
+  <a class="user-nav__link {% if page == 'auth' %}{{ modifier }}{% endif %}" href="auth.html" aria-label="Cabinet">
+    <svg class="user-nav__icon" width="16" height="16">
+      <use href="img/sprite.svg#user"></use>
+    </svg>
+  </a>
+
+  <a class="user-nav__link {% if page == 'cart' %}{{ modifier }}{% endif %}" href="cart.html" aria-label="Cart">
+    <svg class="user-nav__icon" width="16" height="16">
+      <use href="img/sprite.svg#cart"></use>
+    </svg>
+  </a>
+
+  <a class="user-nav__link {% if page == 'cabinet-favorites' %}{{ modifier }}{% endif %}" href="cabinet-favorites.html" aria-label="Favorites">
+    <svg class="user-nav__icon" width="16" height="16">
+      <use href="img/sprite.svg#heart"></use>
+    </svg>
+  </a>
 </div>

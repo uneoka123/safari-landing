@@ -1,0 +1,71 @@
+{% set page = 'cabinet-account' %}
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="cabinet">
+  <div class="cabinet__container cabinet__container--account">
+    {% include "blocks/cabinet-nav.html" %}
+
+    <div class="account">
+      <h2 class="cabinet__title">User Information</h2>
+
+      <form class="form account__form" action="#">
+        <div class="account__form-col">
+          <div class="form__group">
+            <input id="name" class="form__input" type="text">
+            <label class="form__label" for="name">First name</label>
+          </div>
+
+          <div class="form__group">
+            <input id="last-name" class="form__input" type="text">
+            <label class="form__label" for="last-name">Last name</label>
+          </div>
+
+          <div class="form__group">
+            <input id="email" class="form__input" type="email">
+            <label class="form__label" for="email">Email</label>
+          </div>
+
+          <div class="form__group">
+            <select id="gender" class="form__select">
+              <option class="form__option" value=""></option>
+              <option class="form__option" value="male">Male</option>
+              <option class="form__option" value="female">Female</option>
+            </select>
+            <label class="form__label" for="gender">Gender</label>
+          </div>
+
+          <div class="form__group">
+            <input id="date-birth" class="form__input" type="date">
+            <label class="form__label" for="date-birth">Date of birth</label>
+          </div>
+
+          <div class="checkbox">
+            <input id="checkbox" class="checkbox__input" type="checkbox" checked>
+            <label class="checkbox__label" for="checkbox">Newsletter subsciption</label>
+          </div>
+        </div>
+
+        <div class="account__form-col">
+          <div class="form__group">
+            <input id="password-current" class="form__input" type="password">
+            <label class="form__label" for="password-current">Current password</label>
+          </div>
+
+          <div class="form__group">
+            <input id="password-create" class="form__input" type="password">
+            <label class="form__label" for="password-create">New password</label>
+          </div>
+
+          <div class="form__group">
+            <input id="password-confirm" class="form__input" type="password">
+            <label class="form__label" for="password-confirm">Confirm new password</label>
+          </div>
+        </div>
+      </form>
+
+      <button class="account__button" type="button">save changes</button>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -9,10 +9,12 @@
   --dark-grey: #686868;
   --red: #ed165f;
   --orange: #ff5318;
+  --orange-light: #F07B4E;
+  --green: #08B727;
 
   --shadow: 0 0 50px rgba(0,0,0, .1);
   --shadow-2: 0 0 5px 1px rgba(0,0,0, .1);
-  --shadow-red: 0 0 20px 0 var(--red);
+  --shadow-red: 0 0 20px 0 rgba(237, 22, 95, .7);
 
   --main-font: "Mulish", sans-serif;
   --sub-font: "Roboto", sans-serif;
@@ -67,6 +69,10 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 .visually-hidden {

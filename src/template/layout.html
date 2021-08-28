@@ -32,23 +32,7 @@
           </form>
         </div>
 
-        <div class="user-nav">
-          <a class="user-nav__link" href="auth.html" aria-label="Cabinet">
-            <svg class="user-nav__icon" width="16" height="16">
-              <use href="img/sprite.svg#user"></use>
-            </svg>
-          </a>
-          <a class="user-nav__link" href="cart.html" aria-label="Cart">
-            <svg class="user-nav__icon" width="16" height="16">
-              <use href="img/sprite.svg#cart"></use>
-            </svg>
-          </a>
-          <a class="user-nav__link" href="#" aria-label="Favorites">
-            <svg class="user-nav__icon" width="16" height="16">
-              <use href="img/sprite.svg#heart"></use>
-            </svg>
-          </a>
-        </div>
+        {% include "blocks/user-nav.html" %}
       </div>
     </div>
   </header>

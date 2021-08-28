@@ -1,0 +1,73 @@
+.address-book__list {
+  @include reset-list;
+  margin-bottom: 30px;
+}
+
+.address-book__item {
+  padding: 30px 30px 30px 40px;
+  box-shadow: var(--shadow-2);
+}
+
+.address-book__address {
+  letter-spacing: .2px;
+}
+
+.address-book__title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.address-book__text {
+  line-height: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.address-book__item-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.address-book__item-button {
+  @include reset-button;
+
+  color: var(--red);
+  font-weight: 700;
+  letter-spacing: .2px;
+  margin-right: 65px;
+  transition: .2s;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--orange);
+  }
+}
+
+.address-book__button {
+  display: inline-block;
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    color: var(--black);
+    background-color: var(--white);
+  }
+}

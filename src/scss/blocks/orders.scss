@@ -1,0 +1,146 @@
+.orders__list {
+  @include reset-list;
+
+  display: grid;
+  row-gap: 60px;
+}
+
+.orders__item-wrap {
+  display: grid;
+  grid-template-columns: 460px 225px 285px;
+  box-shadow: var(--shadow-2);
+}
+
+.orders__col {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  border-right: 1px solid var(--grey-3);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &--product {
+    display: grid;
+    grid-template-columns: 86px 1fr;
+    column-gap: 30px;
+  }
+}
+
+.orders__link-container {
+  display: block;
+}
+
+.orders__item-img {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+}
+
+.orders__item-badge {
+  display: block;
+  color: var(--white);
+  text-align: center;
+  margin-top: 15px;
+  padding: 5px;
+  border-radius: 2px;
+
+  &--delivery { background-color: var(--green); }
+  &--arrive { background-color: var(--orange-light); }
+}
+
+.orders__item-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.orders__item-title {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  margin-bottom: 0;
+
+  & > a {
+    transition: .2s;
+
+    &:hover,
+    &:focus {
+      color: var(--red);
+    }
+  }
+}
+
+.orders__item-size {
+  color: var(--dark-grey);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.orders__item-price {
+  color: var(--red);
+  font-family: var(--sub-font);
+}
+
+.orders__item-date {
+  font-size: 12px;
+}
+
+.orders__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.orders__text {
+  font-family: var(--subfont);
+  color: var(--dark-grey);
+  font-size: 12px;
+  line-height: 200%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.orders__address {
+  margin-top: 20px;
+}
+
+.orders__buttons {
+  margin-top: 30px;
+}
+
+.orders__button {
+  @include reset-button;
+
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-right: 30px;
+  padding: 12px 30px;
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  transition: .2s;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--white);
+    background-color: var(--orange);
+    border-color: var(--orange);
+  }
+
+  &--invert {
+    color: var(--black);
+    background-color: var(--white);
+  }
+}

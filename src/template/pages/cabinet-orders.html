@@ -1,0 +1,104 @@
+{% set page = 'cabinet-orders' %}
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="cabinet">
+  <div class="cabinet__container">
+    {% include "blocks/cabinet-nav.html" %}
+
+    <div class="orders">
+      <h2 class="cabinet__title">My Orders</h2>
+
+      <ul class="orders__list">
+        <li class="orders__item">
+          <div class="orders__item-wrap">
+            <div class="orders__col orders__col--product">
+              <div class="orders__item-views">
+                <a class="orders__link-container" href="#">
+                  <img class="orders__item-img" src="img/shoes/5.jpg" alt="#">
+                </a>
+                <span class="orders__item-badge orders__item-badge--delivery">Delivered</span>
+              </div>
+
+              <div class="orders__item-desc">
+                <h3 class="orders__item-title">
+                  <a href="#">Casual flat loafers</a>
+                </h3>
+                <span class="orders__item-size">Size - EU: 36 US: 5.5</span>
+                <span class="orders__item-price">₦ 10,000</span>
+                <span class="orders__item-quantity">Qty: 1</span>
+                <span class="orders__item-date">On 20/07/2020</span>
+              </div>
+            </div>
+
+            <div class="orders__col">
+              <h3 class="orders__title">Payment details</h3>
+              <span class="orders__text">Item’s total - ₦ 10,000</span>
+              <span class="orders__text">Delivery fee - ₦ 2,000</span>
+              <span class="orders__text uppercase">total - ₦ 12,000</span>
+            </div>
+
+            <div class="orders__col">
+              <h3 class="orders__title">Delivery method</h3>
+              <span class="orders__text">Door delivery</span>
+
+              <div class="orders__address">
+                <h3 class="orders__title">Shipping address</h3>
+                <p class="orders__text">Ayokunle Oriolowo 4,<br>
+                Barnawa Close, Barnawa Kaduna.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="orders__buttons">
+            <button class="orders__button">order again</button>
+            <button class="orders__button orders__button--invert">request a return</button>
+          </div>
+        </li>
+
+        <li class="orders__item">
+          <div class="orders__item-wrap">
+            <div class="orders__col orders__col--product">
+              <div class="orders__item-views">
+                <a class="orders__link-container" href="#">
+                  <img class="orders__item-img" src="img/clothes/2.jpg" alt="#">
+                </a>
+                <span class="orders__item-badge orders__item-badge--arrive">To arrive</span>
+              </div>
+
+              <div class="orders__item-desc">
+                <h3 class="orders__item-title">
+                  <a href="#">Multicolored armless top</a>
+                </h3>
+                <span class="orders__item-size">Size - XS</span>
+                <span class="orders__item-price">₦ 10,000</span>
+                <span class="orders__item-quantity">Qty: 1</span>
+                <span class="orders__item-date">Between 20/07/2020 - 25/07/2020</span>
+              </div>
+            </div>
+
+            <div class="orders__col">
+              <h3 class="orders__title">Payment details</h3>
+              <span class="orders__text">Item’s total - ₦ 10,000</span>
+              <span class="orders__text">Delivery fee - ₦ 2,000</span>
+              <span class="orders__text uppercase">total - ₦ 12,000</span>
+            </div>
+
+            <div class="orders__col">
+              <h3 class="orders__title">Delivery method</h3>
+              <span class="orders__text">Door delivery</span>
+
+              <div class="orders__address">
+                <h3 class="orders__title">Shipping address</h3>
+                <p class="orders__text">Ayokunle Oriolowo 4,<br>
+                Barnawa Close, Barnawa Kaduna.</p>
+              </div>
+            </div>
+          </div>
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

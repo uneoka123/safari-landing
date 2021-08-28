@@ -1,0 +1,143 @@
+.cabinet__container {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 315px 1fr;
+  column-gap: 30px;
+  min-height: 80vh;
+  padding-top: 60px;
+  padding-bottom: 65px;
+
+  &--account {
+    padding-bottom: 160px;
+  }
+}
+
+.cabinet__nav {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  padding-top: 35px;
+  padding-bottom: 60px;
+  box-shadow: var(--shadow-2);
+}
+
+.cabinet__nav-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.cabinet__nav-list {
+  @include reset-list;
+}
+
+.cabinet__nav-item {
+  position: relative;
+
+  &--active {
+    &::before,
+    &::after {
+      content: "";
+      width: 100%;
+      height: 35px;
+      background-color: var(--white);
+      position: absolute;
+      left: 0;
+      z-index: -1;
+    }
+
+    &::before {
+      border-radius: 0 0 30px 0;
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    &::after {
+      border-radius: 0 30px 0 0;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+
+    & > .cabinet__nav-link {
+      color: var(--white);
+      font-weight: 800;
+      background-color: var(--red);
+
+      &:hover,
+      &:focus {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.cabinet__nav-link {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  column-gap: 15px;
+  letter-spacing: .2px;
+  padding: 15px 15px 15px 30px;
+  transition: .2s;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 100%;
+    height: 35px;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    z-index: -2;
+  }
+
+  &::before {
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  &::after {
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--red);
+  }
+}
+
+.cabinet__logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-top: 30px;
+
+  &:hover,
+  &:focus {
+    color: var(--orange);
+  }
+}
+
+.cabinet__logout-icon {
+  margin-right: 16px;
+}
+
+.cabinet__logout-text {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.cabinet__title {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: .2px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
