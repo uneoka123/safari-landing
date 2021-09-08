@@ -1,0 +1,65 @@
+.conter-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.conter-buttons__text {
+  margin-right: 10px;
+}
+
+.conter-buttons__button {
+  @include reset-button;
+
+  color: var(--white);
+  width: 15px;
+  height: 13px;
+  background-color: var(--red);
+  transition: .2s;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--orange);
+  }
+
+  &--add {
+    &::before {
+      width: 2px;
+      height: 8px;
+    }
+
+    &::after {
+      width: 8px;
+      height: 2px;
+    }
+  }
+
+  &--remove {
+    &::before {
+      width: 8px;
+      height: 2px;
+    }
+  }
+}
+
+.conter-buttons__input {
+  display: block;
+  text-align: center;
+  color: var(--black);
+  width: 22px;
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: var(--grey-3);
+  border: none;
+}

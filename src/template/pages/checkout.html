@@ -1,0 +1,204 @@
+{% set page = 'checkout' %}
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="checkout">
+  <div class="checkout__container">
+
+    <form class="form checkout__form" action="#">
+      <fieldset class="form__fieldset">
+        <h2 class="checkout__title">
+          <svg class="checkout__title-icon" width="20" height="20">
+            <use href="img/sprite.svg#check-circle"></use>
+          </svg>Shipping Address
+        </h2>
+
+        <div class="form__group">
+          <input id="email" class="form__input" type="email">
+          <label class="form__label" for="email">Email</label>
+        </div>
+
+        <div class="form__group">
+          <input id="full-name" class="form__input" type="text">
+          <label class="form__label" for="full-name">Full name</label>
+        </div>
+
+        <div class="form__group">
+          <textarea id="address" class="form__textarea"></textarea>
+          <label class="form__label" for="address">Address</label>
+        </div>
+
+        <div class="form__group">
+          <select id="state" class="form__select">
+            <option class="form__option" value="barnawa">Barnawa</option>
+            <option class="form__option" value="kaduna">Kaduna</option>
+          </select>
+          <label class="form__label" for="state">State/Province</label>
+        </div>
+
+        <div class="form__group">
+          <select id="city" class="form__select">
+            <option class="form__option" value="barnawa">Barnawa</option>
+            <option class="form__option" value="kaduna">Kaduna</option>
+          </select>
+          <label class="form__label" for="city">City</label>
+        </div>
+
+        <div class="form__group">
+          <input id="phone-number" class="form__input" type="tel">
+          <label class="form__label" for="phone-number">Phone number</label>
+        </div>
+
+        <div class="checkbox checkout__form-checkbox">
+          <input id="checkbox" class="checkbox__input" type="checkbox" checked>
+          <label class="checkbox__label" for="checkbox">Set default shipping address</label>
+        </div>
+      </fieldset>
+
+      <div class="checkout__wrap">
+        <fieldset class="form__fieldset">
+          <h2 class="checkout__title checkout__title--mb">
+            <svg class="checkout__title-icon checkout__title-icon--color" width="20" height="20">
+              <use href="img/sprite.svg#check-circle"></use>
+            </svg>Delivery method
+          </h2>
+
+          <div class="form__radio">
+            <div class="form__radio-group">
+              <input id="delivery-price" class="form__radio-input visually-hidden" type="radio" name="delivery" value="price" checked>
+              <label class="form__radio-label" for="delivery-price">₦ 2,000</label>
+            </div>
+
+            <div class="form__radio-group">
+              <input id="delivery-fee" class="form__radio-input visually-hidden" type="radio" name="delivery" value="fee">
+              <label class="form__radio-label" for="delivery-fee">Delivery fee</label>
+            </div>
+
+            <div class="form__radio-group">
+              <input id="delivery-door" class="form__radio-input visually-hidden" type="radio" name="delivery" value="door">
+              <label class="form__radio-label" for="delivery-door">Door delivery</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__fieldset">
+          <h2 class="checkout__title">
+            <svg class="checkout__title-icon checkout__title-icon--color" width="20" height="20">
+              <use href="img/sprite.svg#check-circle"></use>
+            </svg>Payment Methods
+          </h2>
+
+          <div class="form__radio form__radio--gap-30">
+            <div class="form__radio-group">
+              <input id="payment-card" class="form__radio-input visually-hidden" type="radio" name="payment" value="card" checked>
+              <label class="form__radio-label form__radio-label--secondary" for="payment-card">Pay with card <br>
+                <span class="form__radio-subtext">(Get 5% off total price and money back guarantee)</span>
+              </label>
+
+              <p class="form__radio-text">You will be redirected to Paystack payment gateway</p>
+            </div>
+
+            <div class="form__radio-group">
+              <input id="payment-delivery" class="form__radio-input visually-hidden" type="radio" name="payment" value="delivery">
+              <label class="form__radio-label form__radio-label--secondary" for="payment-delivery">Pay on delivery</label>
+
+              <ul class="checkout__list">
+                <li class="checkout__item">Kindly note that we will only accept POS payment option on delivery</li>
+                <li class="checkout__item">You have to make payment before opening package</li>
+                <li class="checkout__item">Once the seal is broken, item can only be returned if damaged or defective </li>
+              </ul>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="checkout__wrap">
+        <fieldset class="form__fieldset form__fieldset--secondary">
+          <div class="checkout__order-row checkout__order-row--products">
+            <h2 class="checkout__title checkout__title--secondary">order summary</h2>
+
+            <ul class="checkout__product-list">
+              <li class="checkout__product-item">
+                <a class="checkout__img-container" href="#">
+                  <img class="checkout__product-img" src="img/shoes/5.jpg" width="86" height="86" alt="#">
+                </a>
+
+                <div class="checkout__product-desc">
+                  <h3 class="checkout__product-title">
+                    <a href="#">Casual flat loafers</a>
+                  </h3>
+                  <span class="checkout__product-size">Size - EU: 36 US: 5.5</span>
+                  <span class="checkout__product-price">₦ 10,000</span>
+                  {% include "blocks/counter-buttons.html" %}
+                </div>
+              </li>
+
+              <li class="checkout__product-item">
+                <a class="checkout__img-container" href="#">
+                  <img class="checkout__product-img" src="img/clothes/2.jpg" width="86" height="86" alt="#">
+                </a>
+
+                <div class="checkout__product-desc">
+                  <h3 class="checkout__product-title">
+                    <a href="#">Multicolored armless top</a>
+                  </h3>
+                  <span class="checkout__product-size">Size - XS</span>
+                  <span class="checkout__product-price">₦ 10,000</span>
+                  {% include "blocks/counter-buttons.html" %}
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="checkout__order-row">
+            <p class="checkout__order-info">
+              <span class="checkout__order-text">Cart sub-total</span>
+              <span class="checkout__order-price">₦ 20,000</span>
+            </p>
+
+            <p class="checkout__order-info">
+              <span class="checkout__order-text">Card discount</span>
+              <span class="checkout__order-price">- ₦ 1,000</span>
+            </p>
+
+            <p class="checkout__order-info">
+              <span class="checkout__order-text">Delivery fee</span>
+              <span class="checkout__order-price">₦ 2,000</span>
+            </p>
+          </div>
+
+          <div class="checkout__order-row">
+            <p class="checkout__order-info">
+              <span class="checkout__order-text">TOTAL</span>
+              <span class="checkout__order-price checkout__order-price--total">₦ 21,000</span>
+            </p>
+          </div>
+        </fieldset>
+
+        <div class="checkout__gift">
+          <div class="checkout__gift-controls">
+            <span class="checkout__gift-text">Is this a gift?</span>
+
+            <div class="checkout__radio">
+              <div class="checkout__radio-group">
+                <input id="gift-yes" class="checkout__radio-input visually-hidden" type="radio" name="gift" value="yes" checked>
+                <label class="checkout__radio-label" for="gift-yes">Yes</label>
+              </div>
+
+              <div class="checkout__radio-group">
+                <input id="gift-no" class="checkout__radio-input visually-hidden" type="radio" name="gift" value="no">
+                <label class="checkout__radio-label" for="gift-no">No</label>
+              </div>
+            </div>
+          </div>
+
+          <p class="checkout__gift-desc">A complimentary gift receipt will be included in the package, and
+          prices will be hidden on the receipt.</p>
+        </div>
+
+        <input class="form__submit" type="submit" value="place order">
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

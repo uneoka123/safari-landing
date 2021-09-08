@@ -134,9 +134,8 @@
 
   &:hover,
   &:focus {
-    color: var(--white);
-    background-color: var(--orange);
-    border-color: var(--orange);
+    color: var(--orange);
+    background-color: transparent;
   }
 
   &--invert {
