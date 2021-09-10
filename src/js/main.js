@@ -1,13 +1,35 @@
 (() => {
   /**
-   * Добавить общие функции для закрытия по клику вне елемента и клавишой Esc
+   * Добавить общие функции для закрытия по клику вне елемента
+   * и доработать закрытие клавишой Esc
    */
 
   // Select
-  const select = document.querySelector('.select');
-  if (select) {
-    select.addEventListener('click', () => {
-      select.classList.toggle('select--active');
+  const selects = document.querySelectorAll('.select');
+  if (selects) {
+    selects.forEach((select) => {
+      const selectTitle = select.querySelector('.select__title');
+      const selectItems = select.querySelectorAll('.select__item');
+
+      select.addEventListener('click', () => {
+        select.classList.toggle('select--active');
+      });
+
+      selectItems.forEach((item) => {
+        item.addEventListener('click', () => {
+          // Set text title
+          selectTitle.textContent = item.textContent;
+        });
+      });
+
+      // Close when click outside
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.select')) {
+          select.classList.remove('select--active');
+        }
+      });
+
+      closeEsc(select);
     });
   }
 
@@ -43,12 +65,45 @@
         }
       });
 
-      // Keyboard event Esc
-      counter.addEventListener('keydown', (e) => {
-        if (e.keyCode == 27) {
-          counter.classList.remove('counter--active');
+      closeEsc(counter);
+    });
+  }
+
+  // Counter-buttons
+  const counterButtons = document.querySelectorAll('.counter-buttons');
+  if (counterButtons) {
+    counterButtons.forEach((counter) => {
+      const buttonAdd = counter.querySelector('.counter-buttons__button--add');
+      const buttonRemove = counter.querySelector('.counter-buttons__button--remove');
+      const counterInput = counter.querySelector('.counter-buttons__input');
+
+      // Add item
+      buttonAdd.addEventListener('click', () => {
+        counterInput.value = parseInt(counterInput.value) + 1;
+        if (parseInt(counterInput.value) > 1) {
+          buttonRemove.removeAttribute('disabled');
         }
       });
+
+      // Remove item
+      buttonRemove.addEventListener('click', () => {
+        if (parseInt(counterInput.value) <= 1) {
+          buttonRemove.setAttribute('disabled', 'disabled');
+        } else {
+          counterInput.value = parseInt(counterInput.value) - 1;
+        }
+      });
+    });
+  }
+
+  // Close element on key press
+  function closeEsc(element) {
+    const activeElement = element.classList.item(0) + '--active';
+
+    document.addEventListener('keydown', (e) => {
+      if (e.keyCode == 27) {
+        element.classList.remove(activeElement);
+      }
     });
   }
 

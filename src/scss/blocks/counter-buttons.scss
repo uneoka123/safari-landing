@@ -1,14 +1,14 @@
-.conter-buttons {
+.counter-buttons {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.conter-buttons__text {
+.counter-buttons__text {
   margin-right: 10px;
 }
 
-.conter-buttons__button {
+.counter-buttons__button {
   @include reset-button;
 
   color: var(--white);
@@ -53,7 +53,7 @@
   }
 }
 
-.conter-buttons__input {
+.counter-buttons__input {
   display: block;
   text-align: center;
   color: var(--black);
