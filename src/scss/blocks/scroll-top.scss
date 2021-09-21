@@ -1,24 +1,22 @@
 .scroll-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: 60px;
   height: 50px;
+  background-image: url("../img/icons/arrow-top.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   border: 1px solid var(--black);
   border-radius: 4px;
   box-sizing: border-box;
   position: fixed;
-  bottom: 120px;
-  right: -100%;
-  transition: .2s;
-
-  // &:hover,
-  // &:focus {
-  //   color: var(--red);
-  //   border-color: var(--red);
-  // }
+  right: 0;
+  bottom: 150px;
+  transform: translateX(100%);
+  transition: .3s ease-in-out;
+  z-index: 9;
 
   &--active {
     right: 50px;
+    transform: translateX(0);
   }
 }

@@ -107,6 +107,25 @@
     });
   }
 
+  // Scroll to top
+  const scrollTop = document.querySelector('.scroll-top');
+  if (scrollTop) {
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 900) {
+        scrollTop.classList.add('scroll-top--active');
+      } else {
+        scrollTop.classList.remove('scroll-top--active');
+      }
+    });
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        left: 0
+      });
+    });
+  }
+
   // Slider
   const swiper = new Swiper('.intro__slider', {
     slidesPerView: 1,

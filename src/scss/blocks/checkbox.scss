@@ -37,4 +37,13 @@
     top: -2px;
     left: 0;
   }
+
+  &--sm {
+    &::before {
+      width: 16px;
+      height: 16px;
+      background-size: 14px 10px;
+      top: 1px;
+    }
+  }
 }

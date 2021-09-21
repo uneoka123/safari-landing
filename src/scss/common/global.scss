@@ -71,6 +71,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+main {
+  position: relative;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
