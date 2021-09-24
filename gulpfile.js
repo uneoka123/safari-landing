@@ -65,7 +65,7 @@ export const html = () => src(path.html.root)
   .pipe(dest(path.html.save));
 
 // Styles
-export const styles = () => src(['node_modules/swiper/swiper-bundle.min.css', path.styles.compile ])
+export const styles = () => src(path.styles.compile)
   .pipe(plumber())
   .pipe(sourcemap.init())
   .pipe(sass().on('error', sass.logError))

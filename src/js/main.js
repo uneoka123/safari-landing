@@ -132,10 +132,15 @@
     speed: 500,
     loop: true,
     autoHeight: true,
+    wrapperClass: 'intro__slider-wrapper',
+    slideClass: 'intro__slide',
+    slideActiveClass: 'intro__slide--active',
 
     pagination: {
-      el: '.swiper-pagination',
+      el: '.intro__pagination',
       clickable: true,
+      bulletClass: 'intro__pagination-bullet',
+      bulletActiveClass: 'intro__pagination-bullet--active'
     },
   });
 })();
