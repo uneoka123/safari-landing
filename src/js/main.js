@@ -1,9 +1,4 @@
 (() => {
-  /**
-   * Добавить общие функции для закрытия по клику вне елемента
-   * и доработать закрытие клавишой Esc
-   */
-
   // Select
   const selects = document.querySelectorAll('.select');
   if (selects) {
@@ -11,6 +6,7 @@
       const selectTitle = select.querySelector('.select__title');
       const selectItems = select.querySelectorAll('.select__item');
 
+      // Toggle active class
       select.addEventListener('click', () => {
         select.classList.toggle('select--active');
       });
@@ -29,7 +25,12 @@
         }
       });
 
-      closeEsc(select);
+      // Close when press Esc
+      document.addEventListener('keydown', (e) => {
+        if (e.keyCode == 27) {
+          select.classList.remove('select--active');
+        }
+      });
     });
   }
 
@@ -65,7 +66,12 @@
         }
       });
 
-      closeEsc(counter);
+      // Close when press Esc
+      document.addEventListener('keydown', (e) => {
+        if (e.keyCode == 27) {
+          counter.classList.remove('counter--active');
+        }
+      });
     });
   }
 
@@ -93,17 +99,6 @@
           counterInput.value = parseInt(counterInput.value) - 1;
         }
       });
-    });
-  }
-
-  // Close element on key press
-  function closeEsc(element) {
-    const activeElement = element.classList.item(0) + '--active';
-
-    document.addEventListener('keydown', (e) => {
-      if (e.keyCode == 27) {
-        element.classList.remove(activeElement);
-      }
     });
   }
 
