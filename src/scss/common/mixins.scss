@@ -2,17 +2,17 @@
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: $gap-sm;
+  padding-right: $gap-sm;
   box-sizing: border-box;
 
   @include media-min(md) {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: $gap-md;
+    padding-right: $gap-md;
   }
   @include media-min(xl) {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: $gap-lg;
+    padding-right: $gap-lg;
   }
 }
 @mixin cross {

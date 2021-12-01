@@ -1,6 +1,12 @@
 // widths
 $widths: (
+  sm: 320px,
   md: 768px,
   lg: 992px,
   xl: 1440px,
 );
+
+// gaps
+$gap-sm: 15px;
+$gap-md: 30px;
+$gap-lg: 50px;
