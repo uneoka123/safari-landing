@@ -1,5 +1,11 @@
 .auth {
   padding: 65px 0 220px;
+
+  @include media-max(md) {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .auth__container {
@@ -24,9 +30,17 @@
 
 .auth__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 160px;
+  grid-template-columns: 1fr;
+  gap: 50px;
   margin-top: 60px;
+
+  @include media-min(md) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
+  @include media-min(lg) {
+    column-gap: 160px;
+  }
 }
 
 .auth__title {
