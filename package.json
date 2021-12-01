@@ -13,7 +13,7 @@
     "gulp-dart-sass": "latest",
     "gulp-htmlmin": "latest",
     "gulp-imagemin": "latest",
-    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-nunjucks-render": "latest",
     "gulp-plumber": "latest",
     "gulp-rename": "latest",
     "gulp-sourcemaps": "latest",
@@ -32,6 +32,6 @@
     "not ie <= 11"
   ],
   "dependencies": {
-    "swiper": "^6.8.1"
+    "swiper": "latest"
   }
 }

@@ -87,10 +87,7 @@ export const scripts = () => src(['node_modules/swiper/swiper-bundle.min.js', pa
 export const sprite = () => src(`${path.img.root}icons/*.svg`)
   .pipe(svgmin({
     plugins: [
-      {
-        name: 'removeViewBox',
-        active: false
-      }
+      { removeViewBox: false }
     ]
   }))
   .pipe(cheerio({
@@ -145,7 +142,6 @@ export const devWatch = () => {
     notify: false,
     open: false,
   });
-  // watch(`${path.html.root}`, html).on('change', browserSync.reload);
   watch(`${path.template.root}**/*.html`, template).on('change', browserSync.reload);
   watch(`${path.styles.root}`, styles).on('change', browserSync.reload);
   watch(`${path.scripts.root}`, scripts).on('change', browserSync.reload);
