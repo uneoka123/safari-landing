@@ -19,4 +19,11 @@
     right: 50px;
     transform: translateX(0);
   }
+
+  @include media-max(md) {
+    &--active {
+      right: 15px;
+      bottom: 30px;
+    }
+  }
 }

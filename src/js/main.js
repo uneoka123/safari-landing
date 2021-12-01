@@ -1,4 +1,15 @@
 (() => {
+  // Toggle menu
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    const page = document.querySelector('#page');
+    const navToggle = nav.querySelector('.nav__toggle');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('nav--active');
+      page.classList.toggle('overflow-hidden');
+    });
+  }
+
   // Select
   const selects = document.querySelectorAll('.select');
   if (selects) {

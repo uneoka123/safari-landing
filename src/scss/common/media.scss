@@ -1,0 +1,21 @@
+@function min-width($width-name) {
+  $width: map-get($widths, $width-name);
+
+  @return "(min-width: #{$width})";
+}
+@function max-width($width-name) {
+  $width: map-get($widths, $width-name);
+
+  @return "(max-width: #{$width - 1})";
+}
+
+@mixin media-min($min-breakpoint-name) {
+  @media #{min-width($min-breakpoint-name)} {
+    @content;
+  }
+}
+@mixin media-max($max-breakpoint-name) {
+  @media #{max-width($max-breakpoint-name)} {
+    @content;
+  }
+}

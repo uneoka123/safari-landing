@@ -1,4 +1,5 @@
 .social {
+  text-align: left;
 }
 
 .social__link {
@@ -29,28 +30,11 @@
     color: var(--orange);
   }
 
-  &--fb { 
-    &::before {
-      background-image: url("../img/icons/facebook.svg"); 
-    }
-  }
-
-  &--tw {
-    &::before {
-      background-image: url("../img/icons/tw.svg"); 
-    }
-  }
-
-  &--insta {
-    &::before {
-      background-image: url("../img/icons/insta.svg");
-    }
-  }
+  &--fb::before { background-image: url("../img/icons/facebook.svg"); }
+  &--tw::before { background-image: url("../img/icons/tw.svg"); }
+  &--insta::before { background-image: url("../img/icons/insta.svg"); }
 }
 
 .social__icon {
   margin-right: 15px;
-}
-
-.social__text {
 }

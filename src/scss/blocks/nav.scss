@@ -1,20 +1,88 @@
 .nav {
-  order: 1;
+  &--active {
+    display: flex;
+    flex-direction: column;
+
+    .nav__toggle-burger { display: none; }
+    .nav__toggle-cross { display: block; }
+
+    .nav__list {
+      --header-height: 71px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px 0;
+      min-height: calc(100vh - var(--header-height));
+      padding: 15px;
+      background-color: var(--grey);
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+      z-index: 99;
+    }
+
+    .nav__link {
+      display: block;
+      padding-bottom: 5px;
+
+      &--active {
+        border-bottom-color: transparent;
+
+        &:hover,
+        &:focus { border-bottom-color: var(--red); }
+      }
+    }
+  }
+
+  @include media-min(xl) { order: 1; }
+}
+
+.nav__toggle {
+  @include reset-button;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 16px;
+
+  @include media-min(xl) {
+    display: none;
+  }
+}
+
+.nav__toggle-icon {
+  transition: .2s;
+
+  &:hover,
+  &:focus { color: var(--red); }
+}
+
+.nav__toggle-cross {
+  display: none;
 }
 
 .nav__list {
   @include reset-list;
 
-  display: flex;
+  display: none;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px 0;
+
+  @include media-min(xl) {
+    display: flex;
+  }
 }
 
 .nav__item {
-  margin-right: 50px;
-
-  &:last-child {
-    margin-right: 0;
+  @include media-min(xl) {
+    margin-right: 50px;
+    &:last-child { margin-right: 0; }
   }
 }
 

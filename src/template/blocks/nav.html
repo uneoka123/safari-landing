@@ -75,6 +75,13 @@
 {% endif %}
 
 <nav class="nav">
+  <button class="nav__toggle" type="button" aria-label="Toggle menu">
+    <svg class="nav__toggle-icon" width="20" height="16">
+      <use class="nav__toggle-burger" href="img/sprite.svg#burger"></use>
+      <use class="nav__toggle-cross" href="img/sprite.svg#cross-round"></use>
+    </svg>
+  </button>
+
   <ul class="nav__list">
     {% for item in nav_list %}
     <li class="nav__item">

@@ -7,18 +7,12 @@
   &:focus-within {
     box-shadow: var(--shadow);
 
-    .card__img {
-      opacity: .75;
-    }
-
-    .card__buttons {
-      opacity: 1;
-    }
+    .card__img { opacity: .75; }
+    .card__buttons { opacity: 1; }
   }
 }
 
 .card__overlay {
-  width: 297px;
   height: 457px;
   background-color: var(--black);
   position: relative;
@@ -44,6 +38,7 @@
 .card__like {
   @include reset-button;
 
+  color: var(--red);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +46,13 @@
   height: 35px;
   margin-bottom: 15px;
   background-color: var(--white);
+
+  &:hover,
+  &:focus {
+    .card__like-icon {
+      fill: var(--red);
+    }
+  }
 }
 
 .card__add {
@@ -79,10 +81,17 @@
 }
 
 .card__title {
+  display: block;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: .2px;
   margin-bottom: 10px;
+  transition: .2s;
+
+  &:hover,
+  &:focus {
+    color: var(--red);
+  }
 }
 
 .card__price {

@@ -12,10 +12,13 @@
   padding-top: 15px;
   padding-bottom: 15px;
   box-sizing: content-box;
+  position: relative;
 }
 
 .header__wrap {
-  display: flex;
+  display: none;
   column-gap: 40px;
   order: 3;
+
+  @include media-min(xl) { display: flex; }
 }

@@ -3,13 +3,26 @@
   padding-top: 60px;
   padding-bottom: 65px;
   background-color: var(--grey);
+
+  @include media-max(xl) {
+    text-align: center;
+  }
 }
 
 .footer__container {
   @include container;
 
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px 0;
+
+  @include media-min(xl) {
+    align-items: normal;
+    flex-direction: row;
+  }
 }
 
 .footer__list {
@@ -29,9 +42,7 @@
   transition: .2s;
 
   &:hover,
-  &:focus {
-    color: var(--orange);
-  }
+  &:focus { color: var(--orange); }
 }
 
 .footer__info {

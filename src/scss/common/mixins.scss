@@ -2,9 +2,18 @@
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
   box-sizing: border-box;
+
+  @include media-min(md) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include media-min(xl) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 @mixin cross {
   position: relative;
