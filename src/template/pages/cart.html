@@ -18,7 +18,7 @@
         <div class="cart-product">
           <div class="cart-product__col cart-product__col--description">
             <div class="cart-product__desc">
-              <a href="#">
+              <a class="cart-product__link" href="#">
                 <img class="cart-product__img" src="img/shoes/5.jpg" alt="#">
               </a>
 
@@ -31,13 +31,23 @@
             </div>
 
             <div class="cart-product__buttons">
-              <button class="cart-product__button cart-product__button--favorites">move to favorites</button>
-              <button class="cart-product__button cart-product__button--remove">remove</button>
+              <button class="cart-product__button cart-product__button--favorites">
+                <svg class="cart-product__button-icon" width="16" height="16">
+                  <use href="img/sprite.svg#heart-stroke"></use>
+                </svg>
+                move to favorites
+              </button>
+              <button class="cart-product__button cart-product__button--remove">
+                <svg class="cart-product__button-icon" width="16" height="16">
+                  <use href="img/sprite.svg#cross"></use>
+                </svg>
+                remove
+              </button>
             </div>
           </div>
 
           <div class="cart-product__col">
-            {% include 'blocks/counter.html' %}
+            {% include 'blocks/counter-buttons.html' %}
           </div>
 
           <div class="cart-product__col">
@@ -54,7 +64,7 @@
         <div class="cart-product">
           <div class="cart-product__col cart-product__col--description">
             <div class="cart-product__desc">
-              <a href="#">
+              <a class="cart-product__link" href="#">
                 <img class="cart-product__img" src="img/clothes/2.jpg" alt="#">
               </a>
 
@@ -67,13 +77,23 @@
             </div>
 
             <div class="cart-product__buttons">
-              <button class="cart-product__button cart-product__button--favorites">move to favorites</button>
-              <button class="cart-product__button cart-product__button--remove">remove</button>
+              <button class="cart-product__button cart-product__button--favorites">
+                <svg class="cart-product__button-icon" width="16" height="16">
+                  <use href="img/sprite.svg#heart-stroke"></use>
+                </svg>
+                move to favorites
+              </button>
+              <button class="cart-product__button cart-product__button--remove">
+                <svg class="cart-product__button-icon" width="16" height="16">
+                  <use href="img/sprite.svg#cross"></use>
+                </svg>
+                remove
+              </button>
             </div>
           </div>
 
           <div class="cart-product__col">
-            {% include 'blocks/counter.html' %}
+            {% include 'blocks/counter-buttons.html' %}
           </div>
 
           <div class="cart-product__col">

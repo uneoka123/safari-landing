@@ -17,13 +17,20 @@
 
 .cart__item-titles {
   display: grid;
-  grid-template-columns: 600px 150px 1fr 1fr;
+  grid-template-columns: 52% 1fr 1fr 1fr;
   margin-bottom: 15px;
+
+  @include media-max(md) {
+    grid-template-columns: 1fr;
+  }
+  @include media-max(lg) {
+    grid-template-columns: 40% 1fr 1fr;
+  }
 }
 
 .cart__col-title {
   color: var(--dark-grey);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
@@ -31,6 +38,17 @@
 
   &:first-child {
     text-align: left;
+  }
+
+  @include media-max(md) {
+    font-size: .75rem;
+
+    &:not(:first-child) {
+      display: none;
+    }
+  }
+  @include media-max(lg) {
+    &:last-child { display: none; }
   }
 }
 
@@ -40,6 +58,11 @@
   display: grid;
   row-gap: 30px;
   margin-bottom: 60px;
+
+  @include media-max(md) {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 30px 15px;
+  }
 }
 
 .cart__info {
@@ -67,35 +90,46 @@
 }
 
 .cart__buttons {
-  display: flex;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 15px;
+  align-items: center;
   margin-top: 60px;
+
+  @include media-min(md) {
+    grid-template-columns: max-content max-content;
+    justify-content: end;
+    gap: 20px;
+  }
+  @include media-min(lg) {
+    column-gap: 40px;
+  }
+  @include media-min(xl) {
+    column-gap: 60px;
+  }
 }
 
 .cart__button {
   @include reset-button;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 10px 30px;
+  padding: 10px 15px;
   border: 1px solid var(--red);
   border-radius: 6px;
   box-sizing: border-box;
-  margin-right: 60px;
   transition: .2s;
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   &:hover,
   &:focus {
     color: var(--white);
     background-color: var(--black);
     border-color: transparent;
-    box-shadow: var(--shadow-red);
   }
 
   &--continue {
@@ -105,5 +139,10 @@
   &--checkout {
     color: var(--white);
     background-color: var(--red);
+  }
+
+  @include media-min(md) {
+    padding-right: 30px;
+    padding-left: 30px;
   }
 }

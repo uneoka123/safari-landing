@@ -1,5 +1,6 @@
 .counter {
   display: flex;
+  min-width: 80px;
   border-bottom: 1px solid var(--grey-2);
   position: relative;
 
@@ -14,8 +15,8 @@
   font-size: 16px;
   font-weight: 600;
   letter-spacing: .2px;
+  text-align: center;
   width: 100%;
-  padding-left: 20px;
   padding-bottom: 10px;
   border: none;
   box-sizing: border-box;
@@ -63,6 +64,7 @@
 .counter__item {
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
   cursor: pointer;
