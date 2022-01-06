@@ -50,8 +50,10 @@
         </div>
 
         <div class="checkbox checkout__form-checkbox">
-          <input id="checkbox" class="checkbox__input" type="checkbox" checked>
-          <label class="checkbox__label checkbox__label--sm" for="checkbox">Set default shipping address</label>
+          <div class="checkbox__item">
+            <input id="checkbox" class="checkbox__input" type="checkbox" checked>
+            <label class="checkbox__label checkbox__label" for="checkbox">Set default shipping address</label>
+          </div>
         </div>
       </fieldset>
 
@@ -119,33 +121,35 @@
 
             <ul class="checkout__product-list">
               <li class="checkout__product-item">
-                <a class="checkout__img-container" href="#">
-                  <img class="checkout__product-img" src="img/shoes/5.jpg" width="86" height="86" alt="#">
-                </a>
+                <div class="checkout__product-wrap">
+                  <a class="checkout__img-container" href="#">
+                    <img class="checkout__product-img" src="img/shoes/5.jpg" width="86" height="86" alt="#">
+                  </a>
 
-                <div class="checkout__product-desc">
-                  <h3 class="checkout__product-title">
-                    <a href="#">Casual flat loafers</a>
-                  </h3>
-                  <span class="checkout__product-size">Size - EU: 36 US: 5.5</span>
-                  <span class="checkout__product-price">₦ 10,000</span>
-                  {% include "blocks/counter-buttons.html" %}
+                  <div class="checkout__product-desc">
+                    <a class="checkout__product-title" href="#">Casual flat loafers</a>
+                    <span class="checkout__product-size">Size - EU: 36 US: 5.5</span>
+                    <span class="checkout__product-price">₦ 10,000</span>
+                  </div>
                 </div>
+
+                {% include "blocks/counter-buttons.html" %}
               </li>
 
               <li class="checkout__product-item">
-                <a class="checkout__img-container" href="#">
-                  <img class="checkout__product-img" src="img/clothes/2.jpg" width="86" height="86" alt="#">
-                </a>
+                <div class="checkout__product-wrap">
+                  <a class="checkout__img-container" href="#">
+                    <img class="checkout__product-img" src="img/clothes/2.jpg" width="86" height="86" alt="#">
+                  </a>
 
-                <div class="checkout__product-desc">
-                  <h3 class="checkout__product-title">
-                    <a href="#">Multicolored armless top</a>
-                  </h3>
-                  <span class="checkout__product-size">Size - XS</span>
-                  <span class="checkout__product-price">₦ 10,000</span>
-                  {% include "blocks/counter-buttons.html" %}
+                  <div class="checkout__product-desc">
+                    <a class="checkout__product-title" href="#">Multicolored armless top</a>
+                    <span class="checkout__product-size">Size - XS</span>
+                    <span class="checkout__product-price">₦ 10,000</span>
+                  </div>
                 </div>
+
+                {% include "blocks/counter-buttons.html" %}
               </li>
             </ul>
           </div>
