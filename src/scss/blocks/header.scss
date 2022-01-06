@@ -6,8 +6,8 @@
   @include container;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   max-width: 1150px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -16,9 +16,18 @@
 }
 
 .header__wrap {
-  display: none;
-  column-gap: 40px;
-  order: 3;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 
-  @include media-min(xl) { display: flex; }
+  @include media-min(lg) {
+    order: 3;
+    margin-left: initial;
+  }
+}
+
+.header__search {
+  @include media-min(lg) {
+    margin-right: 40px;
+  }
 }

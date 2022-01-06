@@ -1,0 +1,41 @@
+.hamburger {
+  transition: transform 400ms;
+  user-select: none;
+  pointer-events: none;
+  width: 38px;
+  position: absolute;
+
+  &--active {
+    transform: rotate(45deg);
+
+    .hamburger__line {
+      &--top { stroke-dashoffset: -64px; }
+      &--middle { transform: rotate(90deg); }
+      &--bottom { stroke-dashoffset: -64px; }
+    }
+  }
+}
+
+.hamburger__line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: currentColor;
+  stroke-width: 8;
+  stroke-linecap: round;
+
+  &--top {
+    stroke-dasharray: 40 160;
+  }
+
+  &--middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+  }
+
+  &--bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+  }
+}

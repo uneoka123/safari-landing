@@ -14,7 +14,6 @@
 
   --shadow: 0 0 50px rgba(0,0,0, .1);
   --shadow-2: 0 0 5px 1px rgba(0,0,0, .1);
-  --shadow-red: 0 0 20px 0 rgba(237, 22, 95, .7);
 
   --main-font: "Mulish", sans-serif;
   --sub-font: "Roboto", sans-serif;
@@ -23,7 +22,8 @@
 html {
   color: var(--black);
   font-family: var(--main-font);
-	font-size: 14px;
+	font-size: 16px;
+  line-height: 1.2;
   font-weight: 400;
 	height: 100%;
   scroll-behavior: smooth;
@@ -57,18 +57,19 @@ p {
   margin-top: 0;
 }
 
+input {
+  appearance: none;
+}
+
 input:disabled + label {
   opacity: .4;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type=number] { -moz-appearance: textfield; }
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
 }
 
 main {

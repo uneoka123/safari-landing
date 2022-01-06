@@ -1,7 +1,11 @@
 .logo {
+  @include media-min(lg) {
+    margin-left: 20px;
+    margin-right: 20px;
+    order: 2;
+  }
   @include media-min(xl) {
     margin-left: 50px;
     margin-right: 50px;
-    order: 2;
   }
 }

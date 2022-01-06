@@ -4,8 +4,11 @@
   if (nav) {
     const page = document.querySelector('#page');
     const navToggle = nav.querySelector('.nav__toggle');
+    const hamburger = nav.querySelector('.hamburger');
+
     navToggle.addEventListener('click', () => {
       nav.classList.toggle('nav--active');
+      hamburger.classList.toggle('hamburger--active');
       page.classList.toggle('overflow-hidden');
     });
   }
@@ -24,6 +27,11 @@
 
       selectItems.forEach((item) => {
         item.addEventListener('click', () => {
+          selectItems.forEach((item) => {
+            item.classList.remove('select__item--active');
+          });
+
+          item.classList.add('select__item--active');
           // Set text title
           selectTitle.textContent = item.textContent;
         });

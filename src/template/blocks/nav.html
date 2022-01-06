@@ -1,92 +1,26 @@
-{% if page == 'index' %}
-  {% set nav_list = [{
-    'title': 'Home',
-    'href': '/',
-    'modifier': 'nav__link--active'
-  }, {
-    'title': 'Clothes',
-    'href': 'clothes.html'
-  }, {
-    'title': 'Shoes',
-    'href': 'shoes.html'
-  }, {
-    'title': 'Accessories',
-    'href': 'accessories.html'
-  }] %}
-{% elif page == 'clothes' %}
-  {% set nav_list = [{
-    'title': 'Home',
-    'href': '/'
-  }, {
-    'title': 'Clothes',
-    'href': 'clothes.html',
-    'modifier': 'nav__link--active'
-  }, {
-    'title': 'Shoes',
-    'href': 'shoes.html'
-  }, {
-    'title': 'Accessories',
-    'href': 'accessories.html'
-  }] %}
-{% elif page == 'shoes' %}
-  {% set nav_list = [{
-    'title': 'Home',
-    'href': '/'
-  }, {
-    'title': 'Clothes',
-    'href': 'clothes.html'
-  }, {
-    'title': 'Shoes',
-    'href': 'shoes.html',
-    'modifier': 'nav__link--active'
-  }, {
-    'title': 'Accessories',
-    'href': 'accessories.html'
-  }] %}
-{% elif page == 'accessories' %}
-  {% set nav_list = [{
-    'title': 'Home',
-    'href': '/'
-  }, {
-    'title': 'Clothes',
-    'href': 'clothes.html'
-  }, {
-    'title': 'Shoes',
-    'href': 'shoes.html'
-  }, {
-    'title': 'Accessories',
-    'href': 'accessories.html',
-    'modifier': 'nav__link--active'
-  }] %}
-{% else %}
-  {% set nav_list = [{
-    'title': 'Home',
-    'href': '/'
-  }, {
-    'title': 'Clothes',
-    'href': 'clothes.html'
-  }, {
-    'title': 'Shoes',
-    'href': 'shoes.html'
-  }, {
-    'title': 'Accessories',
-    'href': 'accessories.html'
-  }] %}
-{% endif %}
+{% set modifier = 'nav__link--active' %}
 
 <nav class="nav">
   <button class="nav__toggle" type="button" aria-label="Toggle menu">
-    <svg class="nav__toggle-icon" width="20" height="16">
-      <use class="nav__toggle-burger" href="img/sprite.svg#burger"></use>
-      <use class="nav__toggle-cross" href="img/sprite.svg#cross-round"></use>
+    <svg class="hamburger" width="80" viewBox="0 0 100 100">
+      <path class="hamburger__line hamburger__line--top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+      <path class="hamburger__line hamburger__line--middle" d="m 30,50 h 40" />
+      <path class="hamburger__line hamburger__line--bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
     </svg>
   </button>
 
   <ul class="nav__list">
-    {% for item in nav_list %}
     <li class="nav__item">
-      <a class="nav__link {{ item.modifier }}" href="{{ item.href }}">{{ item.title }}</a>
+      <a class="nav__link {% if page == 'index' %}{{ modifier }}{% endif %}" href="/">Home</a>
     </li>
-    {% endfor %}
+    <li class="nav__item">
+      <a class="nav__link {% if page == 'clothes' %}{{ modifier }}{% endif %}" href="clothes.html">Clothes</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link {% if page == 'shoes' %}{{ modifier }}{% endif %}" href="shoes.html">Shoes</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link {% if page == 'accessories' %}{{ modifier }}{% endif %}" href="accessories.html">Accessories</a>
+    </li>
   </ul>
 </nav>
