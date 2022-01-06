@@ -2,16 +2,27 @@
   margin-top: 30px;
 }
 
+.checkbox__item {
+  display: flex;
+}
+
 .checkbox__input {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background-color: var(--red);
+  border-radius: 4px;
 
-  &:disabled + .checkbox__label {
-    opacity: .4;
-  }
-
-  &:checked + .checkbox__label {
+  &:checked {
     &::before {
-      background-image: url("../img/icons/check.svg");
+      content: "";
+      width: 16px;
+      height: 16px;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.07545 9.88971L3.55114 7.85968C2.92965 7.35989 2.02166 7.45354 1.51526 8.06966C0.988638 8.71039 1.1033 9.66104 1.76718 10.1582L6.49911 13.7016L14.1965 5.38312C14.7521 4.78273 14.6995 3.84144 14.0805 3.3067C13.491 2.79749 12.6042 2.84666 12.0746 3.41792L6.07545 9.88971Z' fill='white'/%3E%3C/svg%3E%0A");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -19,31 +30,8 @@
 }
 
 .checkbox__label {
-  display: inline-block;
   font-size: 14px;
-  line-height: 18px;
   letter-spacing: .2px;
-  padding-left: 35px;
+  margin-top: .15em;
   cursor: pointer;
-  position: relative;
-
-  &::before {
-    content: "";
-    width: 24px;
-    height: 24px;
-    background-color: var(--red);
-    border-radius: 4px;
-    position: absolute;
-    top: -2px;
-    left: 0;
-  }
-
-  &--sm {
-    &::before {
-      width: 16px;
-      height: 16px;
-      background-size: 14px 10px;
-      top: 1px;
-    }
-  }
 }

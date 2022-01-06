@@ -1,6 +1,15 @@
 <div class="counter-buttons">
-  <span class="counter-buttons__text">Qty</span>
-  <button class="counter-buttons__button counter-buttons__button--add" type="button" aria-label="Add item"></button>
+  <button class="counter-buttons__button counter-buttons__button--remove" type="button" aria-label="Remove item">
+    <svg class="counter-buttons__button-icon" width="16" height="16">
+      <use href="img/sprite.svg#minus"></use>
+    </svg>
+  </button>
+
   <input class="counter-buttons__input" type="number" value="1">
-  <button class="counter-buttons__button counter-buttons__button--remove" type="button" aria-label="Remove item"></button>
+
+  <button class="counter-buttons__button counter-buttons__button--add" type="button" aria-label="Add item">
+    <svg class="counter-buttons__button-icon" width="16" height="16">
+      <use href="img/sprite.svg#plus"></use>
+    </svg>
+  </button>
 </div>

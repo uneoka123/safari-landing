@@ -2,22 +2,31 @@
   @include reset-list;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(map-get($widths, sm) - (#{$gap-sm} * 2)), 1fr));
   gap: 30px;
 }
 
 .favorites__item {
-  padding: 30px;
+  @include padding(1.875rem);
+
+  display: grid;
   box-shadow: var(--shadow-2);
 }
 
 .favorites__item-inner {
+  @include margin-bottom(3.75rem);
+
   display: flex;
+  align-items: flex-start;
 }
 
 .favorites__item-link {
-  display: block;
+  flex-shrink: 0;
   margin-right: 30px;
+
+  @include media-max(lg) {
+    margin-right: 15px;
+  }
 }
 
 .favorites__item-img {
@@ -31,14 +40,11 @@
   font-weight: 600;
   letter-spacing: .2px;
   margin-bottom: 5px;
+  transition: .2s;
 
-  & > a {
-    transition: .2s;
-
-    &:hover,
-    &:focus {
-      color: var(--red);
-    }
+  &:hover,
+  &:focus {
+    color: var(--red);
   }
 }
 
@@ -57,26 +63,32 @@
 
 .favorites__item-buttons {
   display: flex;
-  margin-top: 60px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: auto;
+
+  @include media-min(md) {
+    column-gap: 30px;
+  }
+  @include media-min(xl) {
+    column-gap: 60px
+  }
 }
 
-.favorites__item-button {
+.favorites__button {
   @include reset-button;
 
   text-transform: uppercase;
-  margin-right: 80px;
+  flex-grow: 1;
+  padding: 10px 15px;
   transition: .2s;
-
-  &:last-child {
-    margin-right: 0;
-  }
 
   &--buy {
     color: var(--white);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 800;
     letter-spacing: 2px;
-    padding: 10px 30px;
     background-color: var(--red);
     border: 1px solid var(--red);
     border-radius: 6px;
@@ -90,12 +102,10 @@
   }
 
   &--remove {
-    display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 0 8px;
-    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--red);
-    font-size: 16px;
     font-weight: 600;
     letter-spacing: .2px;
 
@@ -104,4 +114,8 @@
       color: var(--orange);
     }
   }
+}
+
+.favorites__button-icon {
+  margin-right: 8px;
 }

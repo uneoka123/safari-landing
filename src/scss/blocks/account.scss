@@ -1,12 +1,17 @@
 .account__form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  @include padding(3.75rem 4rem 2.8rem);
+
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
-  padding: 60px 65px 45px;
   box-shadow: var(--shadow-2);
+}
 
-  .form__group {
+.account__form-col {
+  flex-grow: 1;
+
+  @include media-min(xl) {
     max-width: 350px;
   }
 }
@@ -20,7 +25,7 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-top: 30px;
-  padding: 12px 50px;
+  padding: 12px 30px;
   background-color: var(--red);
   border: 1px solid var(--red);
   border-radius: 6px;
@@ -30,5 +35,12 @@
   &:focus {
     color: var(--black);
     background-color: var(--white);
+  }
+
+  @include media-max(md) {
+    display: block;
+    min-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

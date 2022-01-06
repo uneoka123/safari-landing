@@ -1,3 +1,11 @@
+.orders {
+  @include media-max(lg) {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .orders__list {
   @include reset-list;
 
@@ -7,14 +15,19 @@
 
 .orders__item-wrap {
   display: grid;
-  grid-template-columns: 460px 225px 285px;
+  grid-template-columns: 45% 25% 30%;
+  border-right: 6px;
   box-shadow: var(--shadow-2);
+
+  @include media-max(lg) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .orders__col {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 20px 15px;
   border-right: 1px solid var(--grey-3);
 
   &:last-child {
@@ -22,10 +35,37 @@
   }
 
   &--product {
-    display: grid;
-    grid-template-columns: 86px 1fr;
-    column-gap: 30px;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
   }
+
+  @include media-max(lg) {
+    text-align: center;
+    border-right: none;
+    border-bottom: 1px solid var(--grey-3);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--product {
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+  }
+  @include media-min(xl) {
+    padding: 35px 30px;
+
+    &--product {
+      column-gap: 30px;
+    }
+  }
+}
+
+.orders__item-views {
+  flex-shrink: 0;
 }
 
 .orders__link-container {
@@ -61,14 +101,11 @@
   font-weight: 600;
   letter-spacing: .2px;
   margin-bottom: 0;
+  transition: .2s;
 
-  & > a {
-    transition: .2s;
-
-    &:hover,
-    &:focus {
-      color: var(--red);
-    }
+  &:hover,
+  &:focus {
+    color: var(--red);
   }
 }
 
@@ -95,12 +132,13 @@
 }
 
 .orders__text {
-  font-family: var(--subfont);
   color: var(--dark-grey);
+  font-family: var(--sub-font);
   font-size: 12px;
-  line-height: 200%;
+  line-height: 1.5;
+  margin-bottom: 5px;
 
-  &:last-child {
+  &:last-of-type {
     margin-bottom: 0;
   }
 }
@@ -110,7 +148,14 @@
 }
 
 .orders__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   margin-top: 30px;
+
+  @include media-max(md) {
+    gap: 15px;
+  }
 }
 
 .orders__button {
@@ -121,25 +166,14 @@
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-right: 30px;
   padding: 12px 30px;
   background-color: var(--red);
   border: 1px solid var(--red);
   border-radius: 6px;
+  position: relative;
   transition: .2s;
 
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &:hover,
-  &:focus {
-    color: var(--orange);
-    background-color: transparent;
-  }
-
-  &--invert {
-    color: var(--black);
-    background-color: var(--white);
+  @include media-max(lg) {
+    flex-grow: 1;
   }
 }

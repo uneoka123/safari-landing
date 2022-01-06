@@ -1,18 +1,10 @@
-{% if page == 'cabinet-account' %}
-  {% set account = 'cabinet__nav-item--active' %}
-{% elif page == 'cabinet-address' %}
-  {% set address = 'cabinet__nav-item--active' %}
-{% elif page == 'cabinet-orders' %}
-  {% set orders = 'cabinet__nav-item--active' %}
-{% elif page == 'cabinet-favorites' %}
-  {% set favorites = 'cabinet__nav-item--active' %}
-{% endif %}
+{% set modifier = 'cabinet__nav-item--active' %}
 
-<div class="cabinet__nav">
+<aside class="cabinet__nav">
   <h2 class="cabinet__nav-title">account dashboard</h2>
 
   <ul class="cabinet__nav-list">
-    <li class="cabinet__nav-item {{ account }}">
+    <li class="cabinet__nav-item {% if page == 'cabinet-account' %}{{ modifier }}{% endif %}">
       <a class="cabinet__nav-link" href="cabinet-account.html">
         <svg class="cabinet__nav-icon" width="14" height="17">
           <use href="img/sprite.svg#account"></use>
@@ -21,7 +13,7 @@
       </a>
     </li>
 
-    <li class="cabinet__nav-item {{ address }}">
+    <li class="cabinet__nav-item {% if page == 'cabinet-address' %}{{ modifier }}{% endif %}">
       <a class="cabinet__nav-link" href="cabinet-address.html">
         <svg class="cabinet__nav-icon" width="14" height="17">
           <use href="img/sprite.svg#book"></use>
@@ -30,7 +22,7 @@
       </a>
     </li>
 
-    <li class="cabinet__nav-item {{ orders }}">
+    <li class="cabinet__nav-item {% if page == 'cabinet-orders' %}{{ modifier }}{% endif %}">
       <a class="cabinet__nav-link" href="cabinet-orders.html">
         <svg class="cabinet__nav-icon" width="14" height="14">
           <use href="img/sprite.svg#box"></use>
@@ -39,7 +31,7 @@
       </a>
     </li>
 
-    <li class="cabinet__nav-item {{ favorites }}">
+    <li class="cabinet__nav-item {% if page == 'cabinet-favorites' %}{{ modifier }}{% endif %}">
       <a class="cabinet__nav-link" href="cabinet-favorites.html">
         <svg class="cabinet__nav-icon" width="14" height="14">
           <use href="img/sprite.svg#heart"></use>
@@ -55,4 +47,4 @@
     </svg>
     <span class="cabinet__logout-text">sign out</span>
   </a>
-</div>
+</aside>
