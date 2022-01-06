@@ -1,5 +1,13 @@
 .user-nav {
   display: flex;
+  margin: 0 20px;
+
+  @include media-min(md) {
+    margin: 0 30px;
+  }
+  @include media-min(lg) {
+    margin: 0;
+  }
 }
 
 .user-nav__link {
@@ -21,6 +29,10 @@
 
   &--active {
     color: var(--red);
+  }
+
+  @include media-max(md) {
+    margin-right: 20px;
   }
 }
 
