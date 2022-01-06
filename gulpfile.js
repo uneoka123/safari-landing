@@ -42,7 +42,8 @@ const path = {
     save: `${dirs.dest}`
   },
   scripts: {
-    root: `${dirs.src}/js/**/*.js`,
+    root: `${dirs.src}/js/*.js`,
+    libs: `${dirs.src}/js/libs/**/*.js`,
     save: `${dirs.dest}/js/`
   },
   img: {
@@ -54,15 +55,11 @@ const path = {
 // Template
 export const template = () => src(`${path.template.pages}*.html`)
   .pipe(nunjucksRender({ path: [`${path.template.root}`] }))
-  .pipe(dest(path.template.save));
-
-// HTML
-export const html = () => src(path.html.root)
   .pipe(htmlmin({
     removeComments: true,
     collapseWhitespace: true,
   }))
-  .pipe(dest(path.html.save));
+  .pipe(dest(path.template.save));
 
 // Styles
 export const styles = () => src(path.styles.compile)
@@ -77,10 +74,14 @@ export const styles = () => src(path.styles.compile)
   .pipe(dest(path.styles.save));
 
 // Scripts
-export const scripts = () => src(['node_modules/swiper/swiper-bundle.min.js', path.scripts.root])
+export const scripts = () => src(path.scripts.root)
   .pipe(concat('main.js'))
   .pipe(terser())
   .pipe(rename({ suffix: '.min' }))
+  .pipe(dest(path.scripts.save));
+
+// Libs js
+export const libsSripts = () => src(path.scripts.libs)
   .pipe(dest(path.scripts.save));
 
 // Sprite
@@ -148,7 +149,7 @@ export const devWatch = () => {
 };
 
 // Develop
-export const dev = series(clean, parallel(template, styles, scripts, sprite, copy), devWatch);
+export const dev = series(clean, parallel(template, styles, scripts, libsSripts, sprite, copy), devWatch);
 
 // Build
-export const build = series(clean, parallel(html, styles, scripts, sprite, fonts, img));
+export const build = series(clean, parallel(template, styles, scripts, libsSripts, sprite, fonts, img));
