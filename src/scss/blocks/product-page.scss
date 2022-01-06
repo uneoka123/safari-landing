@@ -1,6 +1,6 @@
 .product-page {
-  padding-top: 85px;
-  padding-bottom: 120px;
+  @include padding-top(5.3rem);
+  @include padding-bottom(7.5rem);
 }
 
 .product-page__container {
@@ -8,11 +8,12 @@
 }
 
 .product-page__title {
-  font-size: 30px;
+  @include margin-bottom(2.5rem);
+
+  font-size: 1.875rem;
   font-weight: 800;
   letter-spacing: 3px;
   text-transform: uppercase;
-  margin-bottom: 40px;
 }
 
 .product-page__inner {
