@@ -1,6 +1,5 @@
 .auth {
-  padding: 65px 0 220px;
-
+  @include padding(4rem 0 13.75rem);
   @include media-max(md) {
     max-width: 400px;
     margin-left: auto;
