@@ -1,5 +1,5 @@
 .product-page {
-  padding: 85px;
+  padding-top: 85px;
   padding-bottom: 120px;
 }
 
@@ -17,8 +17,15 @@
 
 .product-page__inner {
   display: grid;
-  grid-template-columns: 300px 1fr;
-  column-gap: 85px;
+  grid-template-columns: 1fr;
+
+  @include media-min(md) {
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
+  }
+  @include media-min(xl) {
+    column-gap: 85px;
+  }
 }
 
 .product-page__header {
@@ -32,7 +39,7 @@
   @include reset-list;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(calc(map-get($widths, sm) - (#{$gap-sm} * 2)), 1fr));
   gap: 100px 30px;
   margin-top: 30px;
 }

@@ -25,7 +25,9 @@
     transition: .2s;
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus-within {
     &::before {
       background-color: var(--red);
     }

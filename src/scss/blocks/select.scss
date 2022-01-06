@@ -1,20 +1,25 @@
 .select {
   display: inline-block;
   letter-spacing: .2px;
-  border: 1px solid var(--black);
   position: relative;
 
   &--active {
-    border-bottom-color: transparent;
+    .select__caption {
+      border-bottom-color: transparent;
 
-    .select__caption::after,
-    .select__list { display: block; }
+      &::after { display: block; }
+    }
+
+    .select__list { transform: scale(1); }
   }
 }
 
 .select__caption {
   font-weight: 600;
-  padding: 10px 30px 10px 15px;
+  padding: 10px 15px;
+  min-width: 200px;
+  border: 1px solid var(--black);
+  box-sizing: border-box;
   cursor: pointer;
   position: relative;
 
@@ -34,17 +39,19 @@
 .select__list {
   @include reset-list;
 
-  display: none;
   width: 100%;
   padding-top: 5px;
   padding-bottom: 10px;
   background-color: var(--white);
   border: 1px solid var(--black);
   border-top: none;
+  box-sizing: border-box;
   position: absolute;
-  left: -1px;
-  bottom: 0;
-  transform: translateY(100%);
+  top: calc(100% - 1px);
+  left: 0;
+  transition: transform .3s cubic-bezier(.77, 0, .175, 1);
+  transform: scaleY(0);
+  transform-origin: 0 0;
   z-index: 2;
 }
 
@@ -55,10 +62,15 @@
   cursor: pointer;
   transition: .2s;
 
+  &--active {
+    color: var(--white);
+    font-weight: 800;
+    background-color: var(--red);
+  }
+
   &:hover,
   &:focus {
     color: var(--white);
-    font-weight: 800;
     background-color: var(--red);
   }
 }

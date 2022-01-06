@@ -1,3 +1,9 @@
+.filters {
+  @include media-max(lg) {
+    margin-bottom: 30px;
+  }
+}
+
 .filters__form {
   display: grid;
   row-gap: 60px;
@@ -72,6 +78,11 @@
   box-sizing: border-box;
   transition: .2s;
 
+  &:hover,
+  &:focus {
+    border-color: var(--red);
+  }
+
   &--active {
     color: var(--white);
     background-color: var(--red);
@@ -85,12 +96,19 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+
+  @include media-max(md) {
+    column-gap: 12px;
+  }
 }
 
 .filters__colors-link {
   display: flex;
   align-items: center;
   position: relative;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  transition: .2s;
 
   &::before {
     content: "";
@@ -116,6 +134,11 @@
   }
   &--pink::before { background-color: #F2A1B1; }
   &--red::before { background-color: #D23C47; }
+
+  &:hover,
+  &:focus {
+    outline-color: var(--red);
+  }
 }
 
 .filters__clear {
@@ -139,11 +162,13 @@
 }
 
 .filters__checkbox {
-  margin-top: 37px;
+  margin-top: 32px;
 }
 
 .filters__checkbox-item {
-  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
 
   &:last-child {
     margin-bottom: 0;
@@ -151,10 +176,22 @@
 }
 
 .filters__checkbox-input {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
 
-  &:checked + .filters__checkbox-label {
+  &:checked {
     &::after {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
       background-color: currentColor;
       mask: url("../img/icons/check.svg");
       mask-repeat: no-repeat;
@@ -166,30 +203,8 @@
 
 .filters__checkbox-label {
   font-weight: 600;
-  padding-left: 40px;
+  padding-left: 16px;
   cursor: pointer;
-  position: relative;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &::before {
-    width: 25px;
-    height: 25px;
-    border: 1px solid var(--black);
-    left: 0;
-  }
-
-  &::after {
-    width: 16px;
-    height: 16px;
-    left: 6px;
-  }
 }
 
 .filters__price-control {
@@ -216,6 +231,7 @@
   top: 50%;
   left: 8px;
   transform: translateY(-50%);
+  cursor: text;
 }
 
 .filters__price-text {
