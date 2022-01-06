@@ -36,7 +36,7 @@
   <h2 class="catalog__title">Shop your style</h2>
 
   <div class="catalog__container">
-    <p class="catlog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae gravida cursus adipiscing
+    <p class="catalog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae gravida cursus adipiscing
     viverra at tortor, egestas odio parturient. Morbi ut lorem in erat. Et et molestie diam diam ultricies.
     Scelerisque duis diam ac cras dictum adipiscing. Venenatis at sit proin ut vitae adipiscing id facilisis.</p>
 
@@ -110,7 +110,7 @@
             </button>
             <button class="card__add" type="button">
               <span class="card__add-text">add to cart</span>
-              <img src="img/icons/cart.png" alt="#">
+              <img class="card__add-icon" src="img/icons/cart-add.svg" width="15" height="15" role="presentation">
             </button>
           </div>
         </div>
@@ -134,4 +134,8 @@
     </ul>
   </div>
 </section>
+{% endblock %}
+
+{% block js %}
+  <script src="js/swiper-bundle.min.js"></script>
 {% endblock %}

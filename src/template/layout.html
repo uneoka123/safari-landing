@@ -21,16 +21,14 @@
       {% include "blocks/nav.html" %}
 
       <div class="header__wrap">
-        <div class="search">
-          <form class="search__form" action="#">
-            <input class="search__input" type="search" placeholder="Search...">
-            <button class="search__submit" type="submit" aria-label="search">
-              <svg class="search__submit-icon" width="16" height="16">
-                <use href="img/sprite.svg#search"></use>
-              </svg>
-            </button>
-          </form>
-        </div>
+        <form class="search header__search" action="#">
+          <input class="search__input" type="search" placeholder="Search...">
+          <button class="search__submit" type="submit" aria-label="search">
+            <svg class="search__submit-icon" width="16" height="16">
+              <use href="img/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </form>
 
         {% include "blocks/user-nav.html" %}
       </div>
@@ -90,6 +88,7 @@
     </div>
   </footer>
 
+  {% block js %}{% endblock %}
   <script src="js/main.min.js"></script>
 </body>
 </html>

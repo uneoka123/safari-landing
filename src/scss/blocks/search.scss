@@ -1,6 +1,7 @@
-.search__form {
+.search {
   display: flex;
   align-items: flex-end;
+  position: relative;
 }
 
 .search__input {
@@ -10,9 +11,16 @@
   border: none;
   border-bottom: 1px solid var(--black-5);
   outline: none;
+  position: relative;
 
+  &:hover,
   &:focus {
     border-bottom-color: var(--red);
+  }
+
+  @include media-max(md) {
+    width: 0;
+    padding: 0;
   }
 }
 
