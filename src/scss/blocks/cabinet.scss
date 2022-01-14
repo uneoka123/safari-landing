@@ -5,7 +5,6 @@
 
   display: grid;
   gap: 15px;
-  min-height: 80vh;
 
   &--account {
     @include padding-bottom(10rem);
@@ -13,6 +12,7 @@
 
   @include media-min(md) {
     grid-template-columns: max-content 1fr;
+    min-height: 80vh;
   }
   @include media-min(lg) {
     grid-template-columns: 315px 1fr;
@@ -27,6 +27,19 @@
   grid-template-rows: max-content;
   border-radius: 6px;
   box-shadow: var(--shadow-2);
+
+  @include media-max(md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--white);
+    z-index: 98;
+  }
 }
 
 .cabinet__nav-title {
@@ -36,10 +49,19 @@
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 30px;
+
+  @include media-max(md) {
+    display: none;
+  }
 }
 
 .cabinet__nav-list {
   @include reset-list;
+
+  @include media-max(md) {
+    display: flex;
+    margin-right: 10px;
+  }
 }
 
 .cabinet__nav-item {
@@ -80,6 +102,19 @@
       }
     }
   }
+
+  @include media-max(md) {
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+
+    &--active {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 
 .cabinet__nav-link {
@@ -112,13 +147,38 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: var(--red);
+  }
+
+  @include media-max(md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 
 .cabinet__nav-icon {
   margin-right: 15px;
+
+  @include media-max(md) {
+    margin-right: 0;
+  }
+}
+
+.cabinet__nav-text {
+  @include media-max(md) {
+    display: none;
+  }
 }
 
 .cabinet__logout {
@@ -132,18 +192,34 @@
 
   &:hover,
   &:focus {
-    color: var(--orange);
+    color: var(--red);
+  }
+
+  @include media-max(md) {
+    color: var(--black);
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    border-radius: 50%;
   }
 }
 
 .cabinet__logout-icon {
   margin-right: 16px;
+
+  @include media-max(md) {
+    margin-right: 0;
+  }
 }
 
 .cabinet__logout-text {
   font-size: 16px;
   font-weight: 600;
   letter-spacing: .2px;
+
+  @include media-max(md) {
+    display: none;
+  }
 }
 
 .cabinet__title {
