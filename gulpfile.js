@@ -4,7 +4,7 @@ import cheerio from 'gulp-cheerio';
 import concat from 'gulp-concat';
 import csso from 'gulp-csso';
 import htmlmin from 'gulp-htmlmin';
-import imagemin from 'gulp-imagemin';
+import imagemin, { mozjpeg, optipng } from 'gulp-imagemin';
 import nunjucksRender from 'gulp-nunjucks-render';
 import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
@@ -106,15 +106,8 @@ export const sprite = () => src(`${path.img.root}icons/*.svg`)
 // Imagemin
 export const img = () => src(`${path.img.root}**/*`)
   .pipe(imagemin([
-    imagemin.mozjpeg({quality: 75, progressive: true}),
-    imagemin.optipng({optimizationLevel: 3}),
-    imagemin.svgo({
-      plugins: [
-        { removeViewBox: false },
-        { cleanupIDs: true },
-        { removeDimensions: true }
-      ]
-    })
+    mozjpeg({quality: 75, progressive: true}),
+    optipng({optimizationLevel: 3})
   ]))
   .pipe(dest(path.img.save))
   .pipe(webp({quality: 90}))
@@ -152,4 +145,4 @@ export const devWatch = () => {
 export const dev = series(clean, parallel(template, styles, scripts, libsSripts, sprite, copy), devWatch);
 
 // Build
-export const build = series(clean, parallel(template, styles, scripts, libsSripts, sprite, fonts, img));
+export const build = series(clean, parallel(template, styles, scripts, libsSripts, sprite, img, fonts));

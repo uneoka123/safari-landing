@@ -1,10 +1,12 @@
 {
   "name": "safari",
+  "homepage": "https://nailheart.github.io/Safari/",
   "private": true,
   "type": "module",
   "devDependencies": {
     "browser-sync": "latest",
     "del": "latest",
+    "gh-pages": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-cheerio": "latest",
@@ -24,7 +26,9 @@
   },
   "scripts": {
     "build": "gulp build",
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     "last 2 versions",
