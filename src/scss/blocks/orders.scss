@@ -159,19 +159,7 @@
 }
 
 .orders__button {
-  @include reset-button;
-
-  color: var(--white);
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 12px 30px;
-  background-color: var(--red);
-  border: 1px solid var(--red);
-  border-radius: 6px;
-  position: relative;
-  transition: .2s;
+  @include button;
 
   @include media-max(lg) {
     flex-grow: 1;

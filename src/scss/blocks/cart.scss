@@ -110,39 +110,5 @@
 }
 
 .cart__button {
-  @include reset-button;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 10px 15px;
-  border: 1px solid var(--red);
-  border-radius: 6px;
-  box-sizing: border-box;
-  transition: .2s;
-
-  &:hover,
-  &:focus {
-    color: var(--white);
-    background-color: var(--black);
-    border-color: transparent;
-  }
-
-  &--continue {
-    color: var(--black);
-  }
-
-  &--checkout {
-    color: var(--white);
-    background-color: var(--red);
-  }
-
-  @include media-min(md) {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
+  @include button;
 }

@@ -53,24 +53,7 @@
 }
 
 .address-book__button {
-  color: var(--white);
-  font-size: 1.125rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-align: center;
-  padding: 12px 20px;
-  text-transform: uppercase;
-  background-color: var(--red);
-  border: 1px solid var(--red);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: .2s;
-
-  &:hover,
-  &:focus {
-    color: var(--black);
-    background-color: var(--white);
-  }
+  @include button-secondary;
 
   @include media-max(md) {
     display: block;

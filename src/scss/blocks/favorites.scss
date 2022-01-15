@@ -85,20 +85,8 @@
   transition: .2s;
 
   &--buy {
-    color: var(--white);
-    font-size: 1.125rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background-color: var(--red);
-    border: 1px solid var(--red);
-    border-radius: 6px;
-    box-sizing: border-box;
-
-    &:hover,
-    &:focus {
-      color: var(--black);
-      background-color: var(--white);
-    }
+    @include button-secondary;
+    padding: 10px 15px;
   }
 
   &--remove {

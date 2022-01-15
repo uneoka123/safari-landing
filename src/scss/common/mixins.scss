@@ -32,6 +32,61 @@
   &::before { transform: translateY(-50%) rotate(45deg); }
   &::after { transform: translateY(-50%) rotate(-45deg); }
 }
+// Buttons
+@mixin button {
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 15px;
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  transition: .2s;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+
+  &--invert {
+    color: var(--black);
+    background-color: var(--white);
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--white);
+    background-color: var(--orange);
+    border-color: transparent;
+  }
+
+  @include media-min(md) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+@mixin button-secondary {
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  background-color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: .2s;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--black);
+    background-color: var(--white);
+  }
+}
+// Resets
 @mixin reset-button {
   padding: 0;
   background-color: transparent;

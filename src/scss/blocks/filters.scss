@@ -45,7 +45,7 @@
   transition: .2s;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: var(--red);
   }
 
@@ -79,7 +79,7 @@
   transition: .2s;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     border-color: var(--red);
   }
 
@@ -136,7 +136,7 @@
   &--red::before { background-color: #D23C47; }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     outline-color: var(--red);
   }
 }
@@ -156,7 +156,7 @@
   transition: .2s;
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: var(--red);
   }
 }
