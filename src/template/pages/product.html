@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <section class="product">
+    <div class="product__container">
+
+      <div class="product__gallery">
+        <div class="product__thumb-slider">
+          <ul class="product__thumb-list">
+            {% set products = [{
+              "img": "accessories/1.jpg"
+            }, {
+              "img": "accessories/2.jpg"
+            }, {
+              "img": "accessories/3.jpg"
+            }, {
+              "img": "accessories/4.jpg"
+            }, {
+              "img": "accessories/5.jpg"
+            }] %}
+            {% for product in products %}
+              <li class="product__thumb-item">
+                <img class="product__thumb-img" src="img/{{ product.img }}" alt="Product image">
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="product__preview">
+          <div class="product__preview-wrap">
+            {% for product in products %}
+              <div class="product__preview-item">
+                <img class="product__preview-img" src="img/{{ product.img }}" alt="Product image">
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="product__desc">
+        <h3 class="product__title">Lorem ipsum dolor</h3>
+        <p class="product__text">Alias, fuga deserunt. Tempora cupiditate, atque odit delectus itaque mollitia minima ratione vero nihil ex pariatur omnis dicta nostrum quo nisi nobis?</p>
+        <button class="product__button">Add to cart</button>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}
+
+{% block js %}
+  <script src="js/swiper-bundle.min.js"></script>
+{% endblock %}

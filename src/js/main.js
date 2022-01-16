@@ -140,7 +140,7 @@
     });
   }
 
-  // Slider
+  // Slider intro
   const swiper = new Swiper('.intro__slider', {
     slidesPerView: 1,
     speed: 500,
@@ -155,6 +155,37 @@
       clickable: true,
       bulletClass: 'intro__pagination-bullet',
       bulletActiveClass: 'intro__pagination-bullet--active'
+    },
+  });
+
+  // Product thumb slider
+  const productThumbSwiper = new Swiper('.product__thumb-slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+
+    breakpoints: {
+      768: {
+        spaceBetween: 15,
+        direction: 'vertical',
+      }
+    },
+
+    wrapperClass: 'product__thumb-list',
+    slideClass: 'product__thumb-item',
+  });
+
+  // Product preview slider
+  const productPreviewSwiper = new Swiper('.product__preview', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    wrapperClass: 'product__preview-wrap',
+    slideClass: 'product__preview-item',
+    slideActiveClass: 'product__preview-item--active',
+
+    thumbs: {
+      swiper: productThumbSwiper,
+      slideThumbActiveClass: 'product__thumb-item--active',
     },
   });
 })();
